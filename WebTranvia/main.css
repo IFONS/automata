@@ -1,0 +1,127 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family:Verdana;
+    color:#aaaaaa;
+    margin: 0px;
+}
+
+#menu
+{
+    width:70%;
+    margin: 0px auto;
+    text-align:center;
+}
+
+header a img
+{
+    float: left;
+    height: 8%;
+    width: 8%;
+}
+
+#chart-area
+{
+    width: 300px;
+    height: 300px;
+
+}
+
+.menuitem
+{
+    background-color: #6CAA54;
+    display: inline-block;
+    padding:8px;
+    margin-top:20px;
+    color: white;
+    outline:2px outset #e5e5e5;
+}
+
+.menuitem:hover
+{
+    background-color: #4f7c3d;
+    padding:8px;
+    margin-top:7px;
+    cursor: pointer;
+}
+
+#contenido
+{
+    clear: both;
+    float:left;
+    width:38%;
+    padding:0 20px;
+    margin-left: 20%;
+    margin-top: 40px;
+    background-color:#e5e5e5;
+}
+
+#right
+{
+    background-color:#e5e5e5;
+    float:right;
+    width:20%;
+    padding:15px;
+    margin-top:40px;
+    text-align:center;
+    margin-right: 20%;
+    overflow: hidden;
+}
+
+#cabecera
+{
+    background-color:#e5e5e5;
+    padding:15px;
+    text-align:center;
+    width: 60%;
+    margin: 0px auto;
+
+}
+
+#pie
+{
+    background-color:#e5e5e5;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-top:7px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+#contenedor
+{
+    overflow-:auto;
+}
+
+@media only screen and (max-width:1500px)
+{
+    
+    /* Para pantallas mas grandes */
+    #cabecera{
+        width: 80%;
+    }
+    #contenido{
+        margin-left: 10%;
+        width: 58%;
+    }
+    #right{
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (max-width:620px)
+{
+    /* Para mobil: */
+    #cabecera, #menu, #contenido, #right
+    {
+        width:100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}

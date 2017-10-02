@@ -42,20 +42,6 @@ function menuBotonUnoClick()
 
 function menuBotonDosClick()
 {
-    $("#contenido").html('<h2>Administrar</h2><p>Aquí van los combo box para cambiar la velocidad, sentido , parada destino a la que va el tranvia.  <br>' +
-        '<SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert(\'todo maaaaaaaaal\');"> \n' +
-        '<OPTION VALUE="link pagina 1">opcion1</OPTION>\n' +
-        '<OPTION VALUE="link pagina 2">opcion2</OPTION>\n' +
-        '<OPTION VALUE="link pagina 3">opcion3</OPTION>\n' +
-        '<OPTION VALUE="link pagina 4">opcion4</OPTION> \n' +
-        '</SELECT><br>' +
-        '<SELECT NAME="selCombo2" SIZE=1 onChange="javascript:alert(\'todo maaaaaaaaalo\');"> \n' +
-        '<OPTION VALUE="link pagina 1">opcion1</OPTION>\n' +
-        '<OPTION VALUE="link pagina 2">opcion2</OPTION>\n' +
-        '<OPTION VALUE="link pagina 3">opcion3</OPTION>\n' +
-        '<OPTION VALUE="link pagina 4">opcion4</OPTION> \n' +
-        '</SELECT>' +
-        '</p> ');
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
 };
 

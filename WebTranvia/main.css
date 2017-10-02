@@ -1,6 +1,7 @@
 *
 {
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body
@@ -39,8 +40,13 @@ header a img
     margin-top:20px;
     color: white;
     outline:2px outset #e5e5e5;
+
 }
 
+.menuitem a
+{
+    color: white;
+}
 .menuitem:hover
 {
     background-color: #4f7c3d;

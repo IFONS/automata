@@ -61,37 +61,40 @@ function menuBotonUnoClick()
 };
 
 function menuBotonDosClick()
-{
-    $("#contenido").html('<div id="dest">\n' +
-        '                <label for="seleccionDestino">seleccione destino:</label>\n' +
-        '                <select id="seleccionDestino" class="selectAdmin">\n' +
-        '                    <option class="opcionesDestino" id="opcionDestino0"></option>\n' +
-        '                    <option class="opcionesDestino" id="opcionDestino1">Destino 1</option>\n' +
-        '                    <option class="opcionesDestino" id="opcionDestino2">Destino 2</option>\n' +
-        '                    <option class="opcionesDestino" id="opcionDestino3">Destino 3</option>\n' +
-        '                </select>\n' +
-        '            </div>\n' +
-        '            <!--SEGUNDO DIV Y SELECT PARA ELEGIR EL DESTINO-->\n' +
-        '            <div id="vel">\n' +
-        '                <label for="velocidad">seleccione destino:</label>\n' +
-        '                <select id="velocidad" class="selectAdmin">\n' +
-        '                    <option class="opcionesVelocidad" id="opcionVelocidad0"></option>\n' +
-        '                    <option class="opcionesVelocidad" id="opcionVelocidad1">Velocidad 1</option>\n' +
-        '                    <option class="opcionesVelocidad" id="opcionVelocidad2">Velocidad 2</option>\n' +
-        '                    <option class="opcionesVelocidad" id="opcionVelocidad3">Velocidad 3</option>\n' +
-        '                </select>\n' +
-        '            </div>\n' +
-        '            <!--PRIMER DIV BOTONES PARO (SUBMIT) Y ANULACION (RESET)-->\n' +
-        '            <div class="botones">\n' +
-        '                <label for="marcha"></label>\n' +
-        '                <input type="submit" id="marcha" class="botones" value="PONER EN MARCHA">\n' +
-        '                <!--ira a una funcion para resetear los select, si no, se quita-->\n' +
-        '                <label for="anulacion"></label>\n' +
-        '                <input type="submit" id="anulacion" class="botones" value="ANULAR ÓRDENES">\n' +
-        '                <label for="paro"></label>\n' +
-        '                <input type="submit" id="paro" class="botones" value="PARO DE EMERGENCIA">\n' +
-        '            </div>');
+{   /*admin*/
+    $("#contenido").html('');
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
+    $("#contenido").html('<div id="adm">' +
+        '                   <div id="dest">\n' +
+        '                        <label for="seleccionDestino">seleccione destino:</label>\n' +
+        '                        <select id="seleccionDestino" class="selectAdmin">\n' +
+        '                            <option class="opcionesDestino" id="opcionDestino0"></option>\n' +
+        '                            <option class="opcionesDestino" id="opcionDestino1">Destino 1</option>\n' +
+        '                            <option class="opcionesDestino" id="opcionDestino2">Destino 2</option>\n' +
+        '                            <option class="opcionesDestino" id="opcionDestino3">Destino 3</option>\n' +
+        '                        </select>\n' +
+        '                    </div>\n' +
+        '                    <!--SEGUNDO DIV Y SELECT PARA ELEGIR EL DESTINO-->\n' +
+        '                    <div id="vel">\n' +
+        '                        <label for="velocidad">seleccione destino:</label>\n' +
+        '                        <select id="velocidad" class="selectAdmin">\n' +
+        '                            <option class="opcionesVelocidad" id="opcionVelocidad0"></option>\n' +
+        '                            <option class="opcionesVelocidad" id="opcionVelocidad1">Velocidad 1</option>\n' +
+        '                            <option class="opcionesVelocidad" id="opcionVelocidad2">Velocidad 2</option>\n' +
+        '                            <option class="opcionesVelocidad" id="opcionVelocidad3">Velocidad 3</option>\n' +
+        '                        </select>\n' +
+        '                    </div>\n' +
+        '                    <!--PRIMER DIV BOTONES PARO (SUBMIT) Y ANULACION (RESET)-->\n' +
+    '                       <div class="botones">\n' +
+        '                        <label for="marcha"></label>\n' +
+        '                        <input type="submit" id="marcha" class="botones" value="PONER EN MARCHA">' +
+        '                        <!--ira a una funcion para resetear los select, si no, se quita-->\n' +
+        '                       <label for="anulacion"></label>\n' +
+        '                       <input type="submit" id="anulacion" class="botones" value="ANULAR ÓRDENES">' +
+        '                       <label for="paro"></label>\n' +
+        '                       <input type="submit" id="paro" class="botones" value="PARO DE EMERGENCIA">' +
+        '                    </div>' +
+        '                  </div>');
 };
 
 function menuBotonTresClick()

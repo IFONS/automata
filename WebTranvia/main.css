@@ -145,9 +145,12 @@ a #trenvia
 }
 
 /*CSS ADM DIV*/
-#adm {
+#adm
+{
     height: 100%;
+    padding-bottom: 20%;
 }
+
 #dest, #vel, #botones
 {
     color: #000;

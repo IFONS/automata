@@ -10,7 +10,7 @@ $(document).ready(grafico, esperarClick, ajaxPrueba);
 
 function comboBox()
 {
-
+    /*para algunas cosas con combobox, por si ocurre*/
 
 }
 
@@ -24,7 +24,7 @@ function ajaxPrueba()
             $('#etiqueta').text(result.trim());
         });
     },1000);
-};
+}
 
 function grafico()
 {
@@ -38,33 +38,25 @@ function grafico()
 
 function esperarClick()
 {
-    $("#botonMenu1").click(menuBotonUnoClick);
-    $("#botonMenu1").click(grafico);
+    $("#botonMenu1").click(menuBotonUnoClick,grafico);
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);
     $("#botonMenu4").click(menuBotonCuatroClick);
 
-};
+}
 
 
 function menuBotonUnoClick()
 {
-    $("#contenido").html('<h2>Aqui va la información del tranvia</h2>' +
-        '<p>La posicion en la que se encuentra,velocidad, dirección.... ' +
-        '<div id="canvas-holder">\n' +
-        '\n' +
-        '<canvas id="chart-area">' +
-        '</canvas>\n' +
-        '</div>' +
-        '</p> ');
-    $("#right").html('<h2>Info Pagina UNO</h2><p> </p> ');
-};
+    /*No se si se usara */
+}
 
 function menuBotonDosClick()
 {   /*admin*/
-    $("#contenido").html('');
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
-    $("#contenido").html('<div id="adm">' +
+    $("#contenido").html
+        (
+        '<div id="adm">' +
         '                   <div id="dest">\n' +
         '                        <label for="seleccionDestino">seleccione destino:</label>\n' +
         '                        <select id="seleccionDestino" class="selectAdmin">\n' +
@@ -85,27 +77,36 @@ function menuBotonDosClick()
         '                        </select>\n' +
         '                    </div>\n' +
         '                    <!--PRIMER DIV BOTONES PARO (SUBMIT) Y ANULACION (RESET)-->\n' +
-    '                       <div class="botones">\n' +
-        '                        <label for="marcha"></label>\n' +
+        '                    <div class="botones">' +
+        '                        <label for="marcha"></label>' +
         '                        <input type="submit" id="marcha" class="botones" value="PONER EN MARCHA">' +
-        '                        <!--ira a una funcion para resetear los select, si no, se quita-->\n' +
-        '                       <label for="anulacion"></label>\n' +
+        '                        <!--ira a una funcion para resetear los select, si no, se quita-->' +
+        '                       <label for="anulacion"></label>' +
         '                       <input type="submit" id="anulacion" class="botones" value="ANULAR ÓRDENES">' +
-        '                       <label for="paro"></label>\n' +
+        '                       <label for="paro"></label>' +
         '                       <input type="submit" id="paro" class="botones" value="PARO DE EMERGENCIA">' +
         '                    </div>' +
-        '                  </div>');
-};
+        '</div>');
+}
 
 function menuBotonTresClick()
 {
-    $("#contenido").html('<h2>¿Imprimir datos?</h2><p> </p> ');
+    $("#contenido").html('<h2>¿Imprimir datos?</h2><p> </p> '+
+        '<div id="informe">\n' +
+        '    ' +
+        '</div>'
+       );
     $("#right").html('<h2>Info Pagina TRES</h2><p> </p> ');
-};
+
+}
+
 
 function menuBotonCuatroClick()
 {
-    $("#contenido").html('<!--FORMULARIO DE CONTACTO-->\n' +
+    $("#contenido").html
+    (
+        '<div id="formu">'+
+        '<!--FORMULARIO DE CONTACTO-->\n' +
         '        <h3>Para ponerse en contacto con nosotros rellene el siguiente formulario:</h3>\n' +
         '        <!--SECCION DE RECOGIDA DATOS-->\n' +
         '        <form id="formCont" method="post"><!-- metodo de envio y el action-->\n' +
@@ -130,9 +131,11 @@ function menuBotonCuatroClick()
         '                <label for="limpiar"></label>\n' +
         '                <input type="reset" id="limpiar" class="botones" value="LIMPIAR FORMULARIO">\n' +
         '            </div>\n' +
-        '        </form>');
+        '        </form>' +
+        '</div>'
+    );
     $("#right").html('<h2>Quienes somos, y nuestros correos/contatos</h2><p> </p> ');
-};
+}
 
 /*Funciones para recoger datos del automata*/
 

@@ -7,23 +7,30 @@ $(document).ready(grafico, esperarClick, ajaxPrueba);
     $("#botonMenu3").click(menuBotonTresClick());
     $("#botonMenu4").click(menuBotonCuatroClick());
 };*/
-
+$(document).load(origen);
 function comboBox()
 {
     /*para algunas cosas con combobox, por si ocurre*/
 
 }
 
+function origen()
+{
+
+    alert('segfewf')
+}
 
 
 function ajaxPrueba()
 {
     $.ajaxSetup({ cache: false });
-    setInterval(function() {
+    setInterval(function()
+    {
         $.get("leer_variable.html", function(result){
             $('#etiqueta').text(result.trim());
         });
-    },1000);
+    },1000
+    );
 }
 
 function grafico()
@@ -55,7 +62,7 @@ function menuBotonDosClick()
 {   /*admin*/
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
     $("#contenido").html
-        (
+    (
         '<div id="adm">' +
         '                   <div id="dest">\n' +
         '                        <label for="seleccionDestino">seleccione destino:</label>\n' +
@@ -67,15 +74,6 @@ function menuBotonDosClick()
         '                        </select>\n' +
         '                    </div>\n' +
         '                    <!--SEGUNDO DIV Y SELECT PARA ELEGIR EL DESTINO-->\n' +
-        '                    <div id="vel">\n' +
-        '                        <label for="velocidad">seleccione destino:</label>\n' +
-        '                        <select id="velocidad" class="selectAdmin">\n' +
-        '                            <option class="opcionesVelocidad" id="opcionVelocidad0"></option>\n' +
-        '                            <option class="opcionesVelocidad" id="opcionVelocidad1">Velocidad 1</option>\n' +
-        '                            <option class="opcionesVelocidad" id="opcionVelocidad2">Velocidad 2</option>\n' +
-        '                            <option class="opcionesVelocidad" id="opcionVelocidad3">Velocidad 3</option>\n' +
-        '                        </select>\n' +
-        '                    </div>\n' +
         '                    <!--PRIMER DIV BOTONES PARO (SUBMIT) Y ANULACION (RESET)-->\n' +
         '                    <div class="botones">' +
         '                        <label for="marcha"></label>' +

@@ -14,32 +14,37 @@ function comboBox()
 
 }
 
-function origen()
+
+
+
+function ajaxPrueba(origen)
 {
-
-    alert('segfewf')
-}
-
-
-function ajaxPrueba()
-{
+    alert(origen)
     $.ajaxSetup({ cache: false });
-    setInterval(function()
-    {
-        $.get("leer_variable.html", function(result){
-            $('#etiqueta').text(result.trim());
-        });
-    },1000
+    setInterval
+    (
+        function()
+        {
+            $.get("leer_variable.html", function(result)
+            {
+                $('#etiqueta').text(result.trim());
+            }
+            );
+        },1000
     );
 }
 
 function grafico()
 {
+
     /*recordatorio meter tamaños por variables*/
     var pieData = [{value:90,color:"#0b82e7",highlight: "#0c62ab",label: "Primer dato"},
         {value:60,color:"#0b82e7",highlight: "#0c62ab",label: "Segundo dato"}];
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myPie = new Chart(ctx).Doughnut(pieData);
+    var origen=0;
+    ajaxPrueba(origen)
+
 }
 /*Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
 
@@ -123,11 +128,11 @@ function menuBotonCuatroClick()
         '            </div>\n' +
         '            <div id="obligatorio">(*) Campos obligatorios</div>\n' +
         '            <!--BOTONES DEL FORMULARIO-->\n' +
-        '            <div id="botones">\n' +
-        '                <label for="enviar"></label>\n' +
-        '                <input type="submit" id="enviar" class="botones" value="ENVIAR">\n' +
-        '                <label for="limpiar"></label>\n' +
-        '                <input type="reset" id="limpiar" class="botones" value="LIMPIAR FORMULARIO">\n' +
+        '            <div id="botones">' +
+        '                <label for="enviar"></label>' +
+        '                <input type="submit" id="enviar" class="botones" value="ENVIAR">'+
+        '                <label for="limpiar"></label>'+
+        '                <input type="reset" id="limpiar" class="botones" value="LIMPIAR FORMULARIO">' +
         '            </div>\n' +
         '        </form>' +
         '</div>'

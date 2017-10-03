@@ -1,52 +1,35 @@
 *
 {
     box-sizing: border-box;
-    text-decoration: none;
 }
 
 body
 {
     font-family:Verdana;
     color:#aaaaaa;
-    margin: 0px;
+    margin: 0;
 }
 
-#menu
+.menu
 {
     width:70%;
-    margin: 0px auto;
+    margin: 0 auto;
     text-align:center;
 }
 
-header a img
-{
-    float: left;
-    height: 8%;
-    width: 8%;
-}
 
-#chart-area
-{
-    width: 300px;
-    height: 300px;
-
-}
 
 .menuitem
 {
     background-color: #6CAA54;
     display: inline-block;
+    font-variant: small-caps;
     padding:8px;
-    margin-top:20px;
+    margin: 20px 1% 0 1%;
     color: white;
     outline:2px outset #e5e5e5;
-
 }
 
-.menuitem a
-{
-    color: white;
-}
 .menuitem:hover
 {
     background-color: #4f7c3d;
@@ -75,44 +58,73 @@ header a img
     margin-top:40px;
     text-align:center;
     margin-right: 20%;
-    overflow: hidden;
 }
 
+/*CSS CABECERA*/
 #cabecera
 {
-    background-color:#e5e5e5;
+    background:#e5e5e5 url("imgs/tranvia-cabecero.jpg") no-repeat;
     padding:15px;
     text-align:center;
+    font-weight: bold;
+    color: #fff;
     width: 60%;
-    margin: 0px auto;
-
+    height: 200px;
+    margin: 0 auto;
 }
 
+
+/* mirar porque no funciona
+a #trenvia
+{
+
+    float: left;
+    height: 10px;
+    width: 10px;
+
+
+}
+*/
+#contenedor
+{
+    overflow:auto;
+}
+
+/*CSS PIE (FOOTER)*/
 #pie
 {
     background-color:#e5e5e5;
     text-align:center;
     padding-top:10px;
     padding-bottom:10px;
-    margin-top:7px;
+    margin: 0 auto;
     position: absolute;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
 }
 
-#contenedor
+#licencia
 {
-    overflow-:auto;
+    float: left;
+    margin-left: 10%;
 }
 
+#copyright
+{
+    float: right;
+    margin-right: 10%;
+}
+/*OTROS TAMANIOS*/
 @media only screen and (max-width:1500px)
 {
-    
+
     /* Para pantallas mas grandes */
-    #cabecera{
+    #cabecera
+    {
         width: 80%;
     }
-    #contenido{
+    #contenido
+    {
         margin-left: 10%;
         width: 58%;
     }
@@ -127,7 +139,85 @@ header a img
     #cabecera, #menu, #contenido, #right
     {
         width:100%;
-        margin-left: 0%;
-        margin-right: 0%;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
+
+/*CSS ADM DIV*/
+#adm {
+    height: 100%;
+}
+#dest, #vel, #botones
+{
+    color: #000;
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.selectAdmin
+{
+    font-size: larger;
+}
+
+/*CSS PARA BOTONES*/
+.botones
+{
+    padding-bottom: 5%;
+}
+
+.botones
+{
+    font-weight: bold;
+    height: 30px;
+    margin: 0 3%;
+    width: 180px;
+}
+
+/*CSS FORMULARIO CONTACTO*/
+#datosForm
+{
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.campoText
+{
+    margin: 1.5% 1% 0 1%;
+    height: 30px;
+    width: 35%;
+}
+
+#mensaje
+{
+    vertical-align: -70%;
+}
+
+#obligatorio
+{
+    margin: 1% 0 -2% 0;
+    text-align: center;
+}
+/*CSS BARRA LATERAL (ASIDE)*/
+#right div
+{
+    color: #000;
+    font-weight: bold;
+    margin: 5% 0;
+}
+
+.asideText
+{
+    height: 35px;
+}
+
+aside h2
+{
+    color: #000;
+}
+

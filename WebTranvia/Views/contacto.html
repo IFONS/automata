@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="../js.js"></script>
+    <meta charset="utf-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../../web-tranvia2/WebTranvia/main.css">
+</head>
+<body >
+<header id="cabecera" onclick="location.replace('../index.html')">
+    <a href="../index.html" title="tranvia"><img id="#trenvia" src="../imgs/vista-frontal-de-tranvia_318-82150.jpg" alt="tranvia" style="height: 100px;width: 100px; float: left"></a>
+    <h1>Tranvia</h1>
+</header>
+<div id="contenedor">
+    <div class="menu">
+        <div class="menuitem" id="botonMenu1" onclick="location.replace('../index.html')">Información</div>
+        <div class="menuitem" id="botonMenu2" onclick="location.replace('administrar.html')">Administrar</div>
+        <div class="menuitem" id="botonMenu3" onclick="location.replace('imprimirDatos.html')">Imprimir Datos</div>
+        <div class="menuitem" id="botonMenu4" onclick="location.replace('contacto.html')">Contacto</div>
+    </div>
+    <section id="contenido">
+        <!--FORMULARIO DE CONTACTO-->
+        <h3>Para ponerse en contacto con nosotros rellene el siguiente formulario:</h3>
+        <!--SECCION DE RECOGIDA DATOS-->
+        <form id="formCont" method="post" action="../../web-tranvia2/WebTranvia/js.js"><!-- metodo de envio y el action-->
+            <div id="datosForm">
+                <label for="nombre">nombre (*)</label>
+                <input type="text" id="nombre" class="campoText" placeholder="Nombre" required>
+                <br>
+                <label for="apellidos">apellidos (*)</label>
+                <input type="text" id="apellidos" class="campoText" placeholder="Apellidos" required>
+                <br>
+                <label for="asunto">asunto</label>
+                <input type="text" id="asunto" class="campoText" placeholder="Asunto">
+                <br>
+                <label for="mensaje">mensaje (*)</label>
+                <textarea id="mensaje" placeholder="Escriba aquí su mensaje" class="campoText"></textarea>
+            </div>
+            <div id="obligatorio">(*) Campos obligatorios</div>
+            <!--BOTONES DEL FORMULARIO-->
+            <div id="botones">
+                <label for="enviar"></label>
+                <input type="submit" id="enviar" class="botones" value="ENVIAR">
+                <label for="limpiar"></label>
+                <input type="reset" id="limpiar" class="botones" value="LIMPIAR FORMULARIO">
+            </div>
+        </form>
+    </section>
+    <aside id="right">
+        <h2>Info</h2>
+        <p></p>
+    </aside>
+</div>
+<footer id="pie">
+    <span id="licencia"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" title="Esta obra está bajo una licencia de Creative Commons Reconocimiento 4.0 Internacional."><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></span>
+    <span id="copyright">&copy; copyright:none;</span>
+</footer>
+</body>
+</html>

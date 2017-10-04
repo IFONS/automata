@@ -60,35 +60,39 @@ function esperarClick()
 
 function menuBotonUnoClick()
 {
-    /*No se si se usara */
+    /*No se si se usara
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
 }
 
 function menuBotonDosClick()
 {   /*admin*/
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
     $("#contenido").html
-    (
-        '<div id="adm">' +
-        '                   <div id="dest">\n' +
-        '                        <label for="seleccionDestino">seleccione destino:</label>\n' +
-        '                        <select id="seleccionDestino" class="selectAdmin">\n' +
-        '                            <option class="opcionesDestino" id="opcionDestino0"></option>\n' +
-        '                            <option class="opcionesDestino" id="opcionDestino1">Destino 1</option>\n' +
-        '                            <option class="opcionesDestino" id="opcionDestino2">Destino 2</option>\n' +
-        '                            <option class="opcionesDestino" id="opcionDestino3">Destino 3</option>\n' +
-        '                        </select>\n' +
-        '                    </div>\n' +
-        '                    <!--SEGUNDO DIV Y SELECT PARA ELEGIR EL DESTINO-->\n' +
-        '                    <!--PRIMER DIV BOTONES PARO (SUBMIT) Y ANULACION (RESET)-->\n' +
-        '                    <div class="botones">' +
-        '                        <label for="marcha"></label>' +
-        '                        <input type="submit" id="marcha" class="botones" value="PONER EN MARCHA">' +
-        '                        <!--ira a una funcion para resetear los select, si no, se quita-->' +
-        '                       <label for="anulacion"></label>' +
-        '                       <input type="submit" id="anulacion" class="botones" value="ANULAR ÓRDENES">' +
-        '                       <label for="paro"></label>' +
-        '                       <input type="submit" id="paro" class="botones" value="PARO DE EMERGENCIA">' +
-        '                    </div>' +
+    ('<div id="adm">' +
+        '   <div id="dest">' +
+        '       <label for="seleccionDestino">Seleccione destino:</label>' +
+        '       <select id="seleccionDestino" class="selectAdmin">' +
+        '           <option class="opcionesDestino" id="opcionDestino0"></option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino1">Destino1</option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino2">Destino2</option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino3">Destino3</option>' +
+        '       </select>' +
+        '   </div>' +
+        '   <div class="botones" id="botones">' +
+        '       <label for="marcha"></label>' +
+        '       <input type="submit" id="marcha" class="botones" value="MARCHA"/>' +
+        '       <label for="anulacion"></label>' +
+        '       <input type="submit" id="anulacion" class="botones" value="ANULACION"/>' +
+        '       <label for="paro"></label>' +
+        '       <input type="submit" id="paro" class="botones" value="PARO"/>' +
+        '   </div> ' +
         '</div>');
 }
 
@@ -137,7 +141,7 @@ function menuBotonCuatroClick()
         '        </form>' +
         '</div>'
     );
-    $("#right").html('<h2>Quienes somos, y nuestros correos/contatos</h2><p> </p> ');
+    $("#right").html('<h2>Quienes somos, y nuestras redes </h2><p> </p> ');
 }
 
 /*Funciones para recoger datos del automata*/

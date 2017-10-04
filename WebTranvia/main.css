@@ -47,7 +47,9 @@ body
     margin-left: 20%;
     margin-top: 40px;
     background-color:#e5e5e5;
-    height: 600px;
+    margin-bottom: 1%;
+    padding-bottom: 1%;
+
 
 }
 
@@ -67,8 +69,8 @@ body
     margin-top:40px;
     text-align:center;
     margin-right: 20%;
-    height: 600px;
-    font-size: 90%;
+
+    font-size: 80%;
 }
 
 
@@ -164,6 +166,17 @@ a #trenvia
     padding-bottom: 20%;
 }
 
+.selectAdmin
+{
+    font-size: larger;
+}
+
+
+
+
+
+/*CSS PARA BOTONES*/
+
 #dest, #botones
 {
     color: #000;
@@ -172,29 +185,21 @@ a #trenvia
     padding-top: 5%;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
+    align-items: center;
+
+
+
+
+}
+
+.botones
+{
+
+    font-weight: bold;
+    width: 50%;
     float: left;
 
-}
-
-.selectAdmin
-{
-    font-size: larger;
-}
-
-/*CSS PARA BOTONES*/
-.botones
-{
-    padding-bottom: 5%;
-}
-
-.botones
-{
-    font-weight: bold;
-    height: 30px;
-    margin: 0 3%;
-    width: 180px;
-    margin-bottom: 5%;
-    margin-top: 1%;
 }
 
 /*CSS FORMULARIO CONTACTO*/

@@ -8,6 +8,9 @@ body
     font-family:Verdana;
     color:#aaaaaa;
     margin: 0;
+    background-image: url("./imgs/virgin-blanca-square-plaza.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .menu
@@ -104,6 +107,7 @@ a #trenvia
 #contenedor
 {
     overflow:auto;
+
 }
 
 /*CSS PIE (FOOTER)*/
@@ -145,6 +149,7 @@ a #trenvia
         width: 58%;
         height: auto;
         margin-bottom: 10%;
+        background-size: cover;
     }
     #right
     {
@@ -163,6 +168,7 @@ a #trenvia
         margin-right: 0;
         height:auto;
         margin-bottom: 10%;
+        background-size: cover;
     }
 }
 
@@ -205,7 +211,8 @@ a #trenvia
 
     font-weight: bold;
     width: 50%;
-    float: left;
+
+
 
 }
 

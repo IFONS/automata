@@ -1,4 +1,4 @@
-$(document).ready(grafico, esperarClick, ajaxPrueba);
+$(document).ready(grafico, esperarClick, recorrido, ajaxPrueba);
 
 
 
@@ -18,10 +18,62 @@ function comboBox()
  pero si recargan la pagina parara en la siguiente parada, e iniciara origen*/
 function origen()
 {
+    /*en construccion*/
     emerg=true;
     origen=true;
+
 }
 
+function recorrido()
+{
+    posicion=0;
+    if(posicion===0)
+    {
+        $("#parada0").html('<img src="imgs/red-button-1426817_960_720.png" width="10px" height="10px"/>');
+    }
+    else if(posicion==1)
+    {
+
+    }
+    else if(posicion==2)
+    {
+
+    }
+    else if(posicion==3)
+    {
+
+    }
+    else if(posicion==4)
+    {
+
+    }
+    else if(posicion==5)
+    {
+
+    }
+    else if(posicion==6)
+    {
+
+    }
+    else if(posicion==7)
+    {
+
+    }
+    else if(posicion==8)
+    {
+
+    }
+    else if(posicion==9)
+    {
+
+    }
+    else if(posicion==10)
+    {
+
+    }
+
+
+}
 
 function ajaxPrueba()
 {

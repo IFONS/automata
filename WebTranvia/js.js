@@ -1,25 +1,30 @@
 $(document).ready(grafico, esperarClick, ajaxPrueba);
-/*Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
-/*function esperarClick()
- {
-    $("#botonMenu1").click(menuBotonUnoClick());
-    $("#botonMenu2").click(menuBotonDosClick());
-    $("#botonMenu3").click(menuBotonTresClick());
-    $("#botonMenu4").click(menuBotonCuatroClick());
-};*/
-$(document).load(origen);
+
+
+
+/*funcion para cargar todas las funciones de la pagina en orden*/
+
+function general()
+{
+    /*aqui iran todas las funciones*/
+}
+
 function comboBox()
 {
     /*para algunas cosas con combobox, por si ocurre*/
 
 }
-
-
-
-
-function ajaxPrueba(origen)
+/*funcion cuando carga la pagina, si es la primera vez, solo funcionara la var origen,
+ pero si recargan la pagina parara en la siguiente parada, e iniciara origen*/
+function origen()
 {
-    alert(origen)
+    emerg=true;
+    origen=true;
+}
+
+
+function ajaxPrueba()
+{
     $.ajaxSetup({ cache: false });
     setInterval
     (
@@ -39,11 +44,10 @@ function grafico()
 
     /*recordatorio meter tamaños por variables*/
     var pieData = [{value:90,color:"#0b82e7",highlight: "#0c62ab",label: "Primer dato"},
-        {value:60,color:"#0b82e7",highlight: "#0c62ab",label: "Segundo dato"}];
+        {value:60,color:"#0ce73f",highlight: "#ab3021",label: "Segundo dato"}];
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myPie = new Chart(ctx).Doughnut(pieData);
-    var origen=0;
-    ajaxPrueba(origen)
+    
 
 }
 /*Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
@@ -79,10 +83,10 @@ function menuBotonDosClick()
         '   <div id="dest">' +
         '       <label for="seleccionDestino">Seleccione destino:</label>' +
         '       <select id="seleccionDestino" class="selectAdmin">' +
-        '           <option class="opcionesDestino" id="opcionDestino0"></option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino1">Destino1</option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino2">Destino2</option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino3">Destino3</option>' +
+        '           <option class="opcionesDestino" id="opcionDestino0" value="0"></option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino1" value="1">Destino1</option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino2" value="2">Destino2</option>' +
+        '           <option class="opcionesDestino" id="opcionesDestino3" value="3">Destino3</option>' +
         '       </select>' +
         '   </div>' +
         '   <div class="botones" id="botones">' +

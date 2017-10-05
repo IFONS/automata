@@ -11,7 +11,7 @@ function general()
     grafico()
     esperarClick()
     recorrido(posicion)
-    ajaxPrueba()
+    //ajaxPrueba()
 
 }
 
@@ -30,6 +30,10 @@ function origen()
 
 }
 
+/*
+* funcion para que cuando le manden la posicion, cambie la imagen de la posicion que corresponda.
+* Con esto le damos una forma visual de saber en que parada se encuentra el automata
+* */
 function recorrido(posicion)
 {
 
@@ -126,7 +130,7 @@ function grafico()
 function esperarClick()
 {
 
-    $("#origen").click(origen());
+   // $("#origen").click(alert("sdgfe"));
     $("#botonMenu1").click(menuBotonUnoClick);
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);

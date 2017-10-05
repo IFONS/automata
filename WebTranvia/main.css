@@ -113,14 +113,15 @@ a #trenvia
 /*CSS PIE (FOOTER)*/
 #pie
 {
+    margin-top: 100%;
     background-color:#e5e5e5;
     text-align:center;
     padding-top:10px;
     padding-bottom:10px;
-    margin: 0 auto;
     width: 100%;
     bottom: 0;
     position: fixed;
+
 }
 
 #licencia
@@ -259,5 +260,30 @@ a #trenvia
 aside h2
 {
     color: #000;
+}
+
+/*esto es para las paradas */
+#recorrido
+{
+    background-image: url("imgs/lVerde.png");
+    background-repeat: no-repeat;
+    background-size: 65%;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 9%;
+    
+
+
+}
+
+.paradas
+{
+    background-image: url("imgs/botc3b3n_rojo-svg.png");
+    height: 25px;
+    width: 25px;
+    background-size: cover;
+    float: left;
+    margin-left: 15px !important;
+
 }
 

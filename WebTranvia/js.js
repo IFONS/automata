@@ -1,4 +1,4 @@
-$(document).ready(grafico, esperarClick, recorrido, ajaxPrueba);
+$(document).ready(general);
 
 
 
@@ -6,7 +6,13 @@ $(document).ready(grafico, esperarClick, recorrido, ajaxPrueba);
 
 function general()
 {
+    var posicion=Math.round(Math.random()*10);
     /*aqui iran todas las funciones*/
+    grafico()
+    esperarClick()
+    recorrido(posicion)
+    ajaxPrueba()
+
 }
 
 function comboBox()
@@ -24,55 +30,68 @@ function origen()
 
 }
 
-function recorrido()
+function recorrido(posicion)
 {
-    posicion=0;
-    if(posicion===0)
+
+    if(posicion==0)
     {
-        $("#parada0").html('<img src="imgs/red-button-1426817_960_720.png" width="10px" height="10px"/>');
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada0").css('background-image', 'url(imgs/verde.png)');
+
     }
     else if(posicion==1)
     {
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada1").css('background-image', 'url(imgs/verde.png)');
 
     }
     else if(posicion==2)
     {
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada2").css('background-image', 'url(imgs/verde.png)');
 
     }
     else if(posicion==3)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada3").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==4)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada4").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==5)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada5").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==6)
     {
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada6").css('background-image', 'url(imgs/verde.png)');
 
     }
     else if(posicion==7)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada7").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==8)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada8").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==9)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada9").css('background-image', 'url(imgs/verde.png)');
     }
     else if(posicion==10)
     {
-
+        $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+        $("#parada10").css('background-image', 'url(imgs/verde.png)');
     }
-
-
 }
 
 function ajaxPrueba()
@@ -106,7 +125,9 @@ function grafico()
 
 function esperarClick()
 {
-    $("#botonMenu1").click(menuBotonUnoClick,grafico);
+
+    $("#origen").click(origen());
+    $("#botonMenu1").click(menuBotonUnoClick);
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);
     $("#botonMenu4").click(menuBotonCuatroClick);
@@ -116,15 +137,12 @@ function esperarClick()
 
 function menuBotonUnoClick()
 {
-    /*No se si se usara
-    *
-    *
-    *
-    *
-    *
-    *
-    *
-    * */
+
+}
+
+function origen()
+{
+    //$("body").click('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
 }
 
 function menuBotonDosClick()
@@ -150,6 +168,7 @@ function menuBotonDosClick()
         '       <input type="submit" id="paro" class="botones" value="PARO"/>' +
         '   </div> ' +
         '</div>');
+
 }
 
 function menuBotonTresClick()

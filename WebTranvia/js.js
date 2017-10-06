@@ -4,7 +4,7 @@ $(document).ready(general);
 /**funcion para cargar todas las funciones de la pagina en orden*/
 function general()
 {
-    grafico();
+    //grafico();
     esperarClick();
     recorrido();
 }
@@ -12,67 +12,77 @@ function general()
 
 
 /**Funciona para cambiar la imagen de la parada dependiendo de la parada actual del automata*/
-var posicion=$("seleccionDestino").val();
-function recorrido(posicion)
+
+function recorrido()
 {
+    var posicion=$("destino").val();
     if(posicion==0)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada0").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','0%');
 
     }
     else if(posicion==1)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada1").css('background-image', 'url(imgs/verde.png)');
-
+        $("#car").css('left','10%');
     }
     else if(posicion==2)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada2").css('background-image', 'url(imgs/verde.png)');
-
+        $("#car").css('left','20%');
     }
     else if(posicion==3)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada3").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','30%');
     }
     else if(posicion==4)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada4").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','40%');
     }
     else if(posicion==5)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada5").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','50%');
     }
     else if(posicion==6)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada6").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','60%');
 
     }
     else if(posicion==7)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada7").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','70%');
     }
     else if(posicion==8)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada8").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','80%');
     }
     else if(posicion==9)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada9").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','90%');
     }
     else if(posicion==10)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada10").css('background-image', 'url(imgs/verde.png)');
+        $("#car").css('left','100%');
     }
 }
 
@@ -94,14 +104,15 @@ function ajaxPrueba()
 }
 
 /**Funcion para la grafica(sin usar porque no tenemos datos del automata : velocidad,tiempo...)*/
+/*
 function grafico()
 {
-    /*recordatorio meter tamaños por variables*/
     var pieData = [{value:90,color:"#0b82e7",highlight: "#0c62ab",label: "Primer dato"},
         {value:60,color:"#0ce73f",highlight: "#ab3021",label: "Segundo dato"}];
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myPie = new Chart(ctx).Doughnut(pieData);
 }
+*/
 
 /**Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
 function esperarClick()

@@ -56,7 +56,7 @@ body
     background-color:#e5e5e5;
     margin-bottom: 1%;
     padding: 0 20px 1%;
-    height: 20%;
+    height: auto;
 
 
 }
@@ -141,7 +141,7 @@ body
     {
         margin-left: 10%;
         width: 58%;
-        height:  height: 20%;
+        height: auto;
         margin-bottom: 10%;
         background-size: cover;
     }
@@ -160,7 +160,7 @@ body
         width:100%;
         margin-left: 0;
         margin-right: 0;
-        height:auto;
+        height: auto;
         margin-bottom: 10%;
         background-size: cover;
     }
@@ -260,12 +260,9 @@ aside h2
 /**CSS necesario para Animacion y fondo de la animación*/
 #recorrido
 {
-    background: url("imgs/Tren animado.jpg") no-repeat;
-    background-size: 150%;
-    height: 160px !important;
-    width: 54% !important;
+    height: 100% !important;
+    width: 100% !important;
     clear: both;
-    position: absolute;
 }
 
 .paradas
@@ -286,21 +283,20 @@ descripcion: hace que el coche se mueva dentro de
 
 .car
 {
-    position: relative;
     background-image: url("imgs/tranvia.png");
     background-repeat: no-repeat;
     height: 20px !important;
-    width: 100% !important;
+    width: 150% !important;
     padding: 9%;
     padding-right: 100%;
     background-size: 50%;
-    top: 65%;
     animation-duration: 3s;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
+/*
 @keyframes slidein
 {
     from
@@ -312,14 +308,7 @@ descripcion: hace que el coche se mueva dentro de
     {
         margin-left: 1%;
         width: 25px;
-        /*
-        con esto se da la vuelta a la imagen
-        q::before
-        {
-                  content: "«";
-                  color: blue;
-        }
-        */
+
     }
 
-}
+}*/

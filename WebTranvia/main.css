@@ -221,10 +221,18 @@ body
     width: 80%;
 }
 
-aside h2
+aside h2, aside h3
 {
     color: #000;
 }
+
+#noneFacebook, #noneTwitter, #noneWhatsapp
+{
+    height: 50px;
+    margin: 0 2%;
+    width: 50px;
+}
+
 /**Ocultar input*/
 #origenInputText{
 	visibility:hidden;

@@ -257,5 +257,22 @@ function menuBotonCuatroClick()
         '        </form>' +
         '</div>'
     );
-    $("#right").html('<h2>Quienes somos, y nuestras redes </h2><p> </p> ');
+    validarFormulario();
+    $("#right").html('<h2>Quienes somos, y nuestras redes </h2>' +
+        '<br>' +
+        '<p>Aplicación desarrollada por: </p>' +
+        '<h3><strong>none.com</strong></h3>' +
+        '<br>' +
+        '<p><a href="https://es-es.facebook.com/" target="_blank" title="none Facebook"><img src="imgs/facebook-none.png" id="noneFacebook"></a><a href="https://twitter.com/?lang=es" target="_blank" title="none Twitter"><img src="imgs/twitter-none.png" id="noneTwitter"></a><a href="https://web.whatsapp.com/" target="_blank" title="none WhatsApp"><img src="imgs/whataspp-none.png" id="noneWhatsapp"></a></p> ');
+}
+
+/**Función para validar los campos del formulario
+ Antes de enviarlos al servidor, se validarán los datos introducidos y después se enviará el correo*/
+function validarFormulario() {
+    $("#nombre").blur(
+        function () {
+
+        }
+    )
+
 }

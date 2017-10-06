@@ -1,9 +1,7 @@
+/**Aquí se llama a una lista de funciones que se ejecutan al cargar la pagina*/
 $(document).ready(general);
 
-
-
-/*funcion para cargar todas las funciones de la pagina en orden*/
-
+/**funcion para cargar todas las funciones de la pagina en orden*/
 function general()
 {
     grafico();
@@ -11,21 +9,10 @@ function general()
     recorrido();
 }
 
-function comboBox()
-{
-    /*para algunas cosas con combobox, por si ocurre*/
 
-}
-/*funcion cuando carga la pagina, si es la primera vez, solo funcionara la var origen,
- pero si recargan la pagina parara en la siguiente parada, e iniciara origen*/
-function origenOther()
-{
-    /*en construccion*/
-    emerg=true;
-    origen=true;
 
-}
-    var posicion=$("seleccionDestino").val();
+/**Funciona para cambiar la imagen de la parada dependiendo de la parada actual del automata*/
+var posicion=$("seleccionDestino").val();
 function recorrido(posicion)
 {
     if(posicion==0)
@@ -89,6 +76,7 @@ function recorrido(posicion)
     }
 }
 
+/**Prueba de ajax, sin usar en el proyecto*/
 function ajaxPrueba()
 {
     $.ajaxSetup({ cache: false });
@@ -105,37 +93,41 @@ function ajaxPrueba()
     );
 }
 
+/**Funcion para la grafica(sin usar porque no tenemos datos del automata : velocidad,tiempo...)*/
 function grafico()
 {
-
     /*recordatorio meter tamaños por variables*/
     var pieData = [{value:90,color:"#0b82e7",highlight: "#0c62ab",label: "Primer dato"},
         {value:60,color:"#0ce73f",highlight: "#ab3021",label: "Segundo dato"}];
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myPie = new Chart(ctx).Doughnut(pieData);
-    
-
 }
-/*Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
 
+/**Funciones para cambiar el contenido de la página dependiendo del boton de menu clickado*/
 function esperarClick()
 {
-    $("#botonMenu1").click(menuBotonUnoClick,grafico);
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);
     $("#botonMenu4").click(menuBotonCuatroClick);
 }
 
-function menuBotonUnoClick()
-{
-	/**
-	No se usa aun
-	*/
-}
-
+/**Funcion que escribe en el index un codigo HTML al darle al boton de Administrar, donde hay un formulario que envia los datos a el automata*/
 function menuBotonDosClick()
 {   /*admin*/
-    $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
+    $("#right").html('  <h2>En tiempo real:</h2>'+
+    '                   <div id="destinoTranv">'+
+        '                   <label for="destino">Proximo destino:</label>'+
+        '                   <input type="text" id="destino" class="asideText" value=\':="daw".posA:\'>'+
+        '               </div>'+
+        '               <div id="botones">'+
+'                           <form id="formOrigen">'+
+'                               <input type="text" id="origenInputText" name=\'"daw".origen\' class="botones" value="true"'+
+'                               <p style="clear: both">Ir a la posición origen:</p>'+
+'                               <input type="submit" id="origen" class="menuitem" value="origen"/>'+
+'                           </form>'+
+'                       </div>'+
+'                       <div id="mensajeBusqueda0">'+
+'                       </div>');
     $("#contenido").html
     (
         '<div id="adm">' +
@@ -161,24 +153,29 @@ function menuBotonDosClick()
         '                           <option class="opcionesDestino" id="opcionDestino9" value="9">Parada 9</option>\n' +
         '                           <option class="opcionesDestino" id="opcionDestino10" value="10">Parada 10</option>\n' +
         '                       </select><br><br>\n' +
-        '					    <input name=\'"daw".movP\' id="movP" type="text" value="true" style="visibility:hidden;"/>'+
+        '					    <input name=\'"daw".movP\' class="movP" type="text" value="true"/>'+
         '       		        <label for="marcha"></label>' +
-        '                       <input type="submit" id="marcha" class="botones" value="Puesta en marcha" style="float:left;marginTop:30px;">' +
+        '                       <input type="submit" id="marcha" class="menuitem" value="Puesta en marcha">' +
         '                   </form>'+
         '                       <br>'+
-        '                   <h2 style="clear:both;">Automatico</h2>'+
         '                   <form id="formAutomatico2" method="post">' +
-        '                       <input name=\'"daw".movP\' id="movP" type="text" value="false" style="visibility:hidden;"/>'+
-        '                       <input type="submit" id="marchaAuto" class="botones" value="Puesta en marcha" style="clear:both;float:left;marginTop:30px;">' +
+        '                       <h2 style="clear:both;">Automatico</h2>'+
+        '                       <input name=\'"daw".movP\' class="movP" type="text" value="false"/>'+
+        '                       <input type="submit" id="marchaAuto" class="menuitem" value="Puesta en marcha" >' +
         '                   </form>'+
                 '			<form id="formAutomatico" method="post">'+
-                '				<input name=\'"daw".emerg\' id="movP" type="text" value="true" style="visibility:hidden;"/>'+
+                '				<input name=\'"daw".emerg\' class="movP" type="text" value="true"/>'+
                 '				<label for="paro"></label>' +
-                '               <input type="submit"id="paro" class="botones" value="Paro de emergencia" style="clear:both;float:left;">' +
+                '               <input type="submit"id="paro" class="menuitem" value="Paro de emergencia" >' +
                 '			</form>'+
         '</div>');
+
+
+
     activarDesactivarRadios();
 }
+
+/**Funcion que activa o desactiva un formulario o otro dependiendo del radio button seleccionado*/
 function activarDesactivarRadios() {
     if($("#radioManual").is(':checked')) {
         $("#formAutomatico").attr('disabled','disabled');
@@ -187,6 +184,9 @@ function activarDesactivarRadios() {
         $("#formManual").removeAttr('disabled');
         $("#seleccionDestino").removeAttr('disabled');
         $("#marcha").removeAttr('disabled');
+        $("#formAutomatico").css('color', '#aaaaaa');
+        $("#formAutomatico2").css('color', '#aaaaaa');
+        $("#formManual").css('color', 'black');
     } else {
         $("#formManual").attr('disabled','disabled');
         $("#marcha").attr('disabled','disabled');
@@ -194,8 +194,12 @@ function activarDesactivarRadios() {
         $("#seleccionDestino").attr('disabled','disabled');
         $("#paro").removeAttr('disabled');
         $("#marchaAuto").removeAttr('disabled');
+        $("#formAutomatico").css('color', 'black');
+        $("#formAutomatico2").css('color', 'black');
+        $("#formManual").css('color', '#aaaaaa');
     }
 }
+
 
 function menuBotonTresClick()
 {
@@ -208,7 +212,7 @@ function menuBotonTresClick()
 
 }
 
-
+/**Funcion  que escribe en el html el codigo que se vera cuando se haga click en el boton de contacto*/
 function menuBotonCuatroClick()
 {
     $("#contenido").html
@@ -235,18 +239,12 @@ function menuBotonCuatroClick()
         '            <!--BOTONES DEL FORMULARIO-->\n' +
         '            <div id="botones">' +
         '                <label for="enviar"></label>' +
-        '                <input type="submit" id="enviar" class="botones" value="ENVIAR">'+
+        '                <input type="submit" id="enviar" class="menuitem" value="ENVIAR">'+
         '                <label for="limpiar"></label>'+
-        '                <input type="reset" id="limpiar" class="botones" value="LIMPIAR FORMULARIO">' +
+        '                <input type="reset" id="limpiar" class="menuitem" value="LIMPIAR FORMULARIO">' +
         '            </div>\n' +
         '        </form>' +
         '</div>'
     );
     $("#right").html('<h2>Quienes somos, y nuestras redes </h2><p> </p> ');
 }
-
-/*Funciones para recoger datos del automata*/
-
-
-
-/*Funciones para insertar datos a el automata*/

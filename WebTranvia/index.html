@@ -22,52 +22,56 @@
     <div class="menu">
         <div class="menuitem" id="botonMenu1" onclick="location.replace('index.html')">Información</div>
         <div class="menuitem" id="botonMenu2" >Administrar</div>
-        <div class="menuitem" id="botonMenu3" >Imprimir Datos</div>
+        <div class="menuitem" id="botonMenu3" onclick="location.replace('imprimir.html')">Imprimir Datos</div>
         <div class="menuitem" id="botonMenu4" >Contacto</div>
     </div>
     <section id="contenido">
 
-        <h2>Esta es la que ha hecho ifons</h2>
-        <p> </p>
+        <h2>Tranvia</h2>
+        <p>
+        <!--
         <div id="canvas-holder">
             <canvas id="chart-area">
 
             </canvas>
-            <div id="recorrido">
-                <h2>La tuneladora</h2>
-                <div class="paradas" id="parada0">
+        </div>-->
+        <div class="paradas" id="parada0">
 
-                </div>
-                <div class="paradas" id="parada1">
+        </div>
+        <div class="paradas" id="parada1">
 
-                </div>
-                <div class="paradas" id="parada2">
+        </div>
+        <div class="paradas" id="parada2">
 
-                </div>
-                <div class="paradas" id="parada3">
+        </div>
+        <div class="paradas" id="parada3">
 
-                </div>
-                <div class="paradas" id="parada4">
+        </div>
+        <div class="paradas" id="parada4">
 
-                </div>
-                <div class="paradas" id="parada5">
+        </div>
+        <div class="paradas" id="parada5">
 
-                </div>
-                <div class="paradas" id="parada6">
+        </div>
+        <div class="paradas" id="parada6">
 
-                </div>
-                <div class="paradas" id="parada7">
+        </div>
+        <div class="paradas" id="parada7">
 
-                </div>
-                <div class="paradas" id="parada8">
+        </div>
+        <div class="paradas" id="parada8">
 
-                </div>
-                <div class="paradas" id="parada9">
+        </div>
+        <div class="paradas" id="parada9">
 
-                </div>
-                <div class="paradas" id="parada10">
+        </div>
+        <div class="paradas" id="parada10">
 
-                </div>
+        </div>
+        <div id="recorrido">
+            <div class="car">
+                <!--<div class="car-base"></div>-->
+
             </div>
         </div>
 
@@ -78,21 +82,13 @@
         <h2>En tiempo real:</h2>
         <div id="destinoTranv">
             <label for="destino">Proximo destino:</label>
-            <input type="text" id="destino" class="asideText">
-        </div>
-        <div id="ultimaParada">
-            <label for="paradaPasada">Parada pasada:</label>
-            <input type="text" id="paradaPasada" class="asideText">
-        </div>
-        <div id="currentVelocidad">
-            <label for="velocidadActual">Velocidad actual:</label>
-            <input type="text" id="velocidadActual" class="asideText">
+            <input type="text" id="destino" class="asideText" value=':="daw".posA:'>
         </div>
         <div id="botones">
 			<form id="formOrigen">
 				<input type="text" id="origenInputText" name='"daw".origen' class="botones" value="true"/>
-				<label for="origen">Boton para buscar 0</label>
-				<input type="submit" id="origen" class="botones" value="origen"/>
+				<p>Ir a la posición origen:</p>
+				<input type="submit" id="origen" class="menuitem" value="origen"/>
 			</form>
         </div>
 		<div id="mensajeBusqueda0">

@@ -15,7 +15,7 @@ function general()
 
 function recorrido()
 {
-    var posicion=$("destino").val();
+    var posicion=7;
     if(posicion==0)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
@@ -125,21 +125,12 @@ function esperarClick()
 /**Funcion que escribe en el index un codigo HTML al darle al boton de Administrar, donde hay un formulario que envia los datos a el automata*/
 function menuBotonDosClick()
 {   /*admin*/
-    $("#right").html('  <h2>En tiempo real:</h2>'+
-    '                   <div id="destinoTranv">'+
-        '                   <label for="destino">Proximo destino:</label>'+
-        '                   <input type="text" id="destino" class="asideText" value=\':="daw".posA:\'>'+
-        '               </div>'+
-        '               <div id="botones">'+
-'                           <form id="formOrigen">'+
-'                               <input type="text" id="origenInputText" name=\'"daw".origen\' class="botones" value="true"'+
-'                               <p style="clear: both">Ir a la posición origen:</p>'+
-'                               <input type="submit" id="origen" class="menuitem" value="origen"/>'+
-'                           </form>'+
-'                       </div>'+
-'                       <div id="mensajeBusqueda0">'+
-'                       </div>');
-    $("#contenido").html
+    $("#right").css('visibility', 'hidden');
+    $("#contenedorParadas").hide();
+    $("#recorrido").hide();
+    $("#adm").show();
+
+    /*$("#contenido").html
     (
         '<div id="adm">' +
         '                   <form id="formRadios" method="post">'+
@@ -179,7 +170,7 @@ function menuBotonDosClick()
                 '				<label for="paro"></label>' +
                 '               <input type="submit"id="paro" class="menuitem" value="Paro de emergencia" >' +
                 '			</form>'+
-        '</div>');
+        '</div>');*/
 
 
 
@@ -266,8 +257,6 @@ function menuBotonCuatroClick()
         '<p><a href="https://es-es.facebook.com/" target="_blank" title="none Facebook"><img src="imgs/facebook-none.png" id="noneFacebook"></a><a href="https://twitter.com/?lang=es" target="_blank" title="none Twitter"><img src="imgs/twitter-none.png" id="noneTwitter"></a><a href="https://web.whatsapp.com/" target="_blank" title="none WhatsApp"><img src="imgs/whataspp-none.png" id="noneWhatsapp"></a></p> ');
 }
 
-/**Función para validar los campos del formulario
- Antes de enviarlos al servidor, se validarán los datos introducidos y después se enviará el correo*/
 function validarFormulario() {
     $("#nombre").blur(
         function () {

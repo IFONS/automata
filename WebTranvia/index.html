@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body >
+<!--CABECERA CON SU TITULO e IMAGEN-->
 <header id="cabecera" onclick="location.replace('index.html')">
     <a href="index.html" title="tranvia"><img id="#trenvia" src="imgs/vista-frontal-de-tranvia_318-82150.jpg" alt="tranvia" style="height: 100px;width: 100px; float: left"></a>
-    <!--ESTE ES EL TÍTULO QUE APARECERÁ EN LA CABECERA-->
     <h1>WebTranvía</h1>
     <h2>Aplicación para la gestión del tranvía de Vitoria-Gasteiz</h2>
 </header>
@@ -26,55 +26,98 @@
         <div class="menuitem" id="botonMenu1" onclick="location.replace('index.html')">Información</div>
         <div class="menuitem" id="botonMenu2" >Administrar</div>
         <div class="menuitem" id="botonMenu3" onclick="location.replace('imprimir.html')">Imprimir Datos</div>
-        <div class="menuitem" id="botonMenu4" >Servicio Técnico</div>
+        <div class="menuitem" id="botonMenu4" >Contacto</div>
     </div>
     <!--SECCIÓN CONTENEDORA DE TODOS LAS PANTALLAS QUE SE VAYAN MOSTRANDO (SALVO IMPRIMIR DATOS)
     EN ESTA PANTALLA PRINCIPAL SE MUESTRA LA ANIMACIÓN DEL MOVIMIENTO DEL TRANVÍA CON SUSU PARADAS
     SEGÚN SE SELECCIONES LAS PANTALLAS 'ADMINISTRAR' O ' SERVICIO TÉCNICO' LOS DATOS MOSTRADOS EN ESTE CONTENEDOR CAMBIARÁN-->
     <section id="contenido">
+        <div id="adm">
+            <form id="formRadios" method="post">
+                <br>
+                <input id="radioManual" type="radio" name="radiosForm" value="Manual" checked="checked" onclick="activarDesactivarRadios()"/>
+                <label for="radioManual">Manual</label>
+                <input id="radioAutomatico" type="radio" name="radiosForm" value="Automatico" onclick="activarDesactivarRadios()"/>
+                <label for="radioAutomatico">Automatico</label>
+            </form>
+            <form  id="formManual" method="post">
+                <h2>Manual:</h2>
+                <label for="seleccionDestino" style="float:left">Destino:</label>
+                <select id="seleccionDestino" class="selectAdmin" name=\'"daw".posA\' style="float:left">
+                    <option class="opcionesDestino" id="opcionDestino0" value="0">Parada origen</option>
+                    <option class="opcionesDestino" id="opcionDestino1" value="1">Parada 1</option>
+                    <option class="opcionesDestino" id="opcionDestino2" value="2">Parada 2</option>
+                    <option class="opcionesDestino" id="opcionDestino3" value="3">Parada 3</option>
+                    <option class="opcionesDestino" id="opcionDestino4" value="4">Parada 4</option>
+                    <option class="opcionesDestino" id="opcionDestino5" value="5">Parada 5</option>
+                    <option class="opcionesDestino" id="opcionDestino6" value="6">Parada 6</option>
+                    <option class="opcionesDestino" id="opcionDestino7" value="7">Parada 7</option>
+                    <option class="opcionesDestino" id="opcionDestino8" value="8">Parada 8</option>
+                    <option class="opcionesDestino" id="opcionDestino9" value="9">Parada 9</option>
+                    <option class="opcionesDestino" id="opcionDestino10" value="10">Parada 10</option>
+                </select><br><br>
+                <input name=\'"daw".movP\' class="movP" type="text" value="true"/>
+                <label for="marcha"></label>
+                <input type="submit" id="marcha" class="menuitem" value="Puesta en marcha">
+            </form>
+            <br>
+            <form id="formAutomatico2" method="post">
+                <h2 style="clear:both;">Automatico</h2>
+                <input name=\'"daw".movP\' class="movP" type="text" value="false"/>
+                <input type="submit" id="marchaAuto" class="menuitem" value="Puesta en marcha" >
+            </form>
+            <form id="formAutomatico" method="post">
+                <input name=\'"daw".emerg\' class="movP" type="text" value="true"/>
+                <label for="paro"></label>
+                <input type="submit"id="paro" class="menuitem" value="Paro de emergencia" >
+            </form>
+        </div>
+        <!--ESTA ES EL DIV QUE CONTIENE LAS PARADAS -->
+        <div id="contenedorParadas">
+            <h2>Tranvia</h2>
+            <p>
+                <!--ESTA ERA UNA GRÁFICA QUE TENÍAMOS PROGRAMADA PERO NOS HAN FALTADO DATOS PARA MOSTRAR (PENSÁBAMOS EN PROGRESO Y VELOCIDAD PERO LA VARIABLE VELOCIDAD SOLO TIENE UN VALOR FIJO Y NO VEMOS EL SENTIDO DE MOSTRARLO)-->
+                <!--
+                <div id="canvas-holder">
+                    <canvas id="chart-area">
 
-        <h2>Tranvia</h2>
-        <p>
-        <!--ESTA ERA UNA GRÁFICA QUE TENÍAMOS PROGRAMADA PERO NOS HAN FALTADO DATOS PARA MOSTRAR (PENSÁBAMOS EN PROGRESO Y VELOCIDAD PERO LA VARIABLE VELOCIDAD SOLO TIENE UN VALOR FIJO Y NO VEMOS EL SENTIDO DE MOSTRARLO)-->
-        <div id="canvas-holder">
-            <canvas id="chart-area">
+                    </canvas>
+                </div>-->
+            <div class="paradas" id="parada0">
 
-            </canvas>
-        </div>-->
+            </div>
+            <div class="paradas" id="parada1">
+
+            </div>
+            <div class="paradas" id="parada2">
+
+            </div>
+            <div class="paradas" id="parada3">
+
+            </div>
+            <div class="paradas" id="parada4">
+
+            </div>
+            <div class="paradas" id="parada5">
+
+            </div>
+            <div class="paradas" id="parada6">
+
+            </div>
+            <div class="paradas" id="parada7">
+
+            </div>
+            <div class="paradas" id="parada8">
+
+            </div>
+            <div class="paradas" id="parada9">
+
+            </div>
+            <div class="paradas" id="parada10">
+
+            </div>
+        </div>
         <!--ESTA ES EL DIV QUE CONTIENE LA ANIMACIÓN GENERADA POR CSS-->
-        <div class="paradas" id="parada0">
-
-        </div>
-        <div class="paradas" id="parada1">
-
-        </div>
-        <div class="paradas" id="parada2">
-
-        </div>
-        <div class="paradas" id="parada3">
-
-        </div>
-        <div class="paradas" id="parada4">
-
-        </div>
-        <div class="paradas" id="parada5">
-
-        </div>
-        <div class="paradas" id="parada6">
-
-        </div>
-        <div class="paradas" id="parada7">
-
-        </div>
-        <div class="paradas" id="parada8">
-
-        </div>
-        <div class="paradas" id="parada9">
-
-        </div>
-        <div class="paradas" id="parada10">
-
-        </div>
         <div id="recorrido">
             <div class="car">
                 <!--<div class="car-base"></div>-->
@@ -85,12 +128,12 @@
     </section>
     <!--AQUÍ SE DEFINE LA BARRA LATERAL DERECHA PARA ESTA PANTALLA. LAS DEMÁS PANTALLAS, SALVO 'IMPRIMIR DATOS', GENERAN ESTA BARRA DESDE JS-->
     <aside id="right">
-        <!--<h2>Info</h2>
-        <p></p>-->
         <h2>En tiempo real:</h2>
         <div id="destinoTranv">
             <label for="destino">Proximo destino:</label>
-            <input type="text" id="destino" class="asideText" value=':="daw".posA:'>
+            <!--Tener en cuenta que si no esta conectado al servidor en el input aparecera el nombre de la variable en vez del contenido-->
+            <input type="text" id="destino" class="asideText" text=""  value=':="daw".posA:' disabled>
+            <input type="hidden" id="destino1" value=':="daw".posA:'>
         </div>
         <div id="botones">
 			<form id="formOrigen">
@@ -101,14 +144,13 @@
         </div>
 		<div id="mensajeBusqueda0">
 		</div>
-        <!-- div para meter animacion del recorrido -->
     </aside>
 </div>
 
 <!--ESTE ES EL PIE DE PÁGINA. ES FIJO, EL MISMO PARA TODAS LAS PANTALLAS DE LA APLICACIÓN-->
 <footer id="pie">
     <span id="licencia"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" title="Esta obra está bajo una licencia de Creative Commons Reconocimiento 4.0 Internacional."><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></span>
-    <span id="copyright">&copy; none.com-2017</span>
+    <span id="copyright">&copy; copyright:none;</span>
 </footer>
 </body>
 </html>

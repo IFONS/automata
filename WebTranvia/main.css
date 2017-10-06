@@ -172,6 +172,7 @@ body
     height: 100%;
     padding-bottom: 20%;
     color:black;
+    display: none;
 }
 
 /**Tamaño de letra para el select de administrar*/
@@ -232,7 +233,6 @@ aside h2, aside h3
     margin: 0 2%;
     width: 50px;
 }
-
 /**Ocultar input*/
 #origenInputText{
 	visibility:hidden;

@@ -6,13 +6,9 @@ $(document).ready(general);
 
 function general()
 {
-    var posicion=Math.round(Math.random()*10);
-    /*aqui iran todas las funciones*/
-    grafico()
-    esperarClick()
-    recorrido(posicion)
-    //ajaxPrueba()
-
+    grafico();
+    esperarClick();
+    recorrido();
 }
 
 function comboBox()
@@ -22,21 +18,16 @@ function comboBox()
 }
 /*funcion cuando carga la pagina, si es la primera vez, solo funcionara la var origen,
  pero si recargan la pagina parara en la siguiente parada, e iniciara origen*/
-function origen()
+function origenOther()
 {
     /*en construccion*/
     emerg=true;
     origen=true;
 
 }
-
-/*
-* funcion para que cuando le manden la posicion, cambie la imagen de la posicion que corresponda.
-* Con esto le damos una forma visual de saber en que parada se encuentra el automata
-* */
+    var posicion=$("seleccionDestino").val();
 function recorrido(posicion)
 {
-
     if(posicion==0)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
@@ -129,50 +120,81 @@ function grafico()
 
 function esperarClick()
 {
-
-   // $("#origen").click(alert("sdgfe"));
-    $("#botonMenu1").click(menuBotonUnoClick);
+    $("#botonMenu1").click(menuBotonUnoClick,grafico);
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);
     $("#botonMenu4").click(menuBotonCuatroClick);
-
 }
-
 
 function menuBotonUnoClick()
 {
-
-}
-
-function origen()
-{
-    //$("body").click('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+	/**
+	No se usa aun
+	*/
 }
 
 function menuBotonDosClick()
 {   /*admin*/
     $("#right").html('<h2>Info Pagina DOS</h2><p> </p> ');
     $("#contenido").html
-    ('<div id="adm">' +
-        '   <div id="dest">' +
-        '       <label for="seleccionDestino">Seleccione destino:</label>' +
-        '       <select id="seleccionDestino" class="selectAdmin">' +
-        '           <option class="opcionesDestino" id="opcionDestino0" value="0"></option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino1" value="1">Destino1</option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino2" value="2">Destino2</option>' +
-        '           <option class="opcionesDestino" id="opcionesDestino3" value="3">Destino3</option>' +
-        '       </select>' +
-        '   </div>' +
-        '   <div class="botones" id="botones">' +
-        '       <label for="marcha"></label>' +
-        '       <input type="submit" id="marcha" class="botones" value="MARCHA"/>' +
-        '       <label for="anulacion"></label>' +
-        '       <input type="submit" id="anulacion" class="botones" value="ANULACION"/>' +
-        '       <label for="paro"></label>' +
-        '       <input type="submit" id="paro" class="botones" value="PARO"/>' +
-        '   </div> ' +
+    (
+        '<div id="adm">' +
+        '                   <form id="formRadios" method="post">'+
+    '                           <br><input id="radioManual" type="radio" name="radiosForm" value="Manual" checked="checked" onclick="activarDesactivarRadios()"//>'+
+        '                       <label for="radioManual">Manual</label>' +
+        '                       <input id="radioAutomatico" type="radio" name="radiosForm" value="Automatico" onclick="activarDesactivarRadios()"/>'+
+        '                       <label for="radioAutomatico">Automatico</label>' +
+    '                       </form>'+
+        '                   <form  id="formManual" method="post">'+
+        '                       <h2>Manual:</h2>'+
+        '                       <label for="seleccionDestino" style="float:left">Destino:</label>\n' +
+        '                       <select id="seleccionDestino" class="selectAdmin" name=\'"daw".posA\' style="float:left">\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino0" value="0">Parada origen</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino1" value="1">Parada 1</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino2" value="2">Parada 2</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino3" value="3">Parada 3</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino4" value="4">Parada 4</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino5" value="5">Parada 5</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino6" value="6">Parada 6</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino7" value="7">Parada 7</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino8" value="8">Parada 8</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino9" value="9">Parada 9</option>\n' +
+        '                           <option class="opcionesDestino" id="opcionDestino10" value="10">Parada 10</option>\n' +
+        '                       </select><br><br>\n' +
+        '					    <input name=\'"daw".movP\' id="movP" type="text" value="true" style="visibility:hidden;"/>'+
+        '       		        <label for="marcha"></label>' +
+        '                       <input type="submit" id="marcha" class="botones" value="Puesta en marcha" style="float:left;marginTop:30px;">' +
+        '                   </form>'+
+        '                       <br>'+
+        '                   <h2 style="clear:both;">Automatico</h2>'+
+        '                   <form id="formAutomatico2" method="post">' +
+        '                       <input name=\'"daw".movP\' id="movP" type="text" value="false" style="visibility:hidden;"/>'+
+        '                       <input type="submit" id="marchaAuto" class="botones" value="Puesta en marcha" style="clear:both;float:left;marginTop:30px;">' +
+        '                   </form>'+
+                '			<form id="formAutomatico" method="post">'+
+                '				<input name=\'"daw".emerg\' id="movP" type="text" value="true" style="visibility:hidden;"/>'+
+                '				<label for="paro"></label>' +
+                '               <input type="submit"id="paro" class="botones" value="Paro de emergencia" style="clear:both;float:left;">' +
+                '			</form>'+
         '</div>');
-
+    activarDesactivarRadios();
+}
+function activarDesactivarRadios() {
+    if($("#radioManual").is(':checked')) {
+        $("#formAutomatico").attr('disabled','disabled');
+        $("#paro").attr('disabled','disabled');
+        $("#marchaAuto").attr('disabled','disabled');
+        $("#formManual").removeAttr('disabled');
+        $("#seleccionDestino").removeAttr('disabled');
+        $("#marcha").removeAttr('disabled');
+    } else {
+        $("#formManual").attr('disabled','disabled');
+        $("#marcha").attr('disabled','disabled');
+        $("#formAutomatico").removeAttr('disabled');
+        $("#seleccionDestino").attr('disabled','disabled');
+        $("#paro").removeAttr('disabled');
+        $("#marchaAuto").removeAttr('disabled');
+    }
 }
 
 function menuBotonTresClick()

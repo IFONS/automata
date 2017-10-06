@@ -8,9 +8,6 @@ body
     font-family:Verdana;
     color:#aaaaaa;
     margin: 0;
-    background-image: url("./imgs/virgin-blanca-square-plaza.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .menu
@@ -113,15 +110,14 @@ a #trenvia
 /*CSS PIE (FOOTER)*/
 #pie
 {
-    margin-top: 100%;
     background-color:#e5e5e5;
     text-align:center;
     padding-top:10px;
     padding-bottom:10px;
+    margin: 0 auto;
     width: 100%;
     bottom: 0;
     position: fixed;
-
 }
 
 #licencia
@@ -261,19 +257,19 @@ aside h2
 {
     color: #000;
 }
-
-/*esto es para las paradas */
+#origenInputText{
+	visibility:hidden;
+}
+/*
 #recorrido
 {
-    background: url("imgs/lVerde.png") no-repeat;
+    background-image: url("imgs/Verde.png");
+    background-repeat: no-repeat;
+    background-size: 65%;
     height: 100%;
     width: 100%;
-    padding-bottom: 20%;
-
-    
-
-
-}
+    padding-bottom: 9%;
+}*/
 
 .paradas
 {
@@ -283,59 +279,4 @@ aside h2
     background-size: cover;
     float: left;
     margin-left: 15px !important;
-
-
-
-
-}
-
-/*
-animacion para coche y sus estilos
-
-descripcion: hace que el coche se mueva dentro de
-*/
-
-.car
-{
-    background-image: url("imgs/tren2.jpg");
-    height: 20px !important;
-    width: 100% !important;
-    padding: 9%;
-    padding-right: 15%;
-    background-size: cover;
-    margin-top: 12%;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-
-
-}
-
-@keyframes slidein
-{
-    from
-    {
-        margin-left: 70%;
-        width: 25px;
-
-    }
-
-    to
-    {
-        margin-left: 3%;
-        width: 25px;
-        /*
-        con esto se da la vuelta a la imagen
-        q::before
-        {
-                  content: "«";
-                  color: blue;
-        }
-
-
-        */
-    }
-
 }

@@ -1,91 +1,111 @@
 /**Aquí se llama a una lista de funciones que se ejecutan al cargar la pagina*/
 $(document).ready(general);
-
+posicion=0;
 /**funcion para cargar todas las funciones de la pagina en orden*/
 function general()
 {
     //grafico();
     esperarClick();
-    recorrido();
+    //recorrido();
 }
 
 
 
 /**Funciona para cambiar la imagen de la parada dependiendo de la parada actual del automata*/
-
-function recorrido()
+/*
+function recorrido(posicion)
 {
-    var posicion=7;
     if(posicion==0)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada0").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','0%');
-
+        $( "#car" ).animate({
+            marginLeft: "0%",
+        }, 1500 );
     }
     else if(posicion==1)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada1").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','10%');
+        $( "#car" ).animate({
+            marginLeft: "5%",
+        }, 1500 );
     }
     else if(posicion==2)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada2").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','20%');
+        $( "#car" ).animate({
+            marginLeft: "10%",
+        }, 1500 );
     }
     else if(posicion==3)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada3").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','30%');
+        $( "#car" ).animate({
+            marginLeft: "15%",
+        }, 1500 );
     }
     else if(posicion==4)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada4").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','40%');
+        $( "#car" ).animate({
+            marginLeft: "20%",
+        }, 1500 );
     }
     else if(posicion==5)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada5").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','50%');
+        $( "#car" ).animate({
+            marginLeft: "25%",
+        }, 1500 );
     }
     else if(posicion==6)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada6").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','60%');
+        $( "#car" ).animate({
+            marginLeft: "30%",
+        }, 1500 );
 
     }
     else if(posicion==7)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada7").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','70%');
+        $( "#car" ).animate({
+            marginLeft: "35%",
+        }, 1500 );
     }
     else if(posicion==8)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada8").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','80%');
+        $( "#car" ).animate({
+            marginLeft: "40%",
+        }, 1500 );
     }
     else if(posicion==9)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada9").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','90%');
+        $( "#car" ).animate({
+            marginLeft: "45%",
+        }, 1500 );
     }
     else if(posicion==10)
     {
         $(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
         $("#parada10").css('background-image', 'url(imgs/verde.png)');
-        $("#car").css('left','100%');
+        $( "#car" ).animate({
+            marginLeft: "50%",
+        }, 1500 );
     }
 }
-
+*/
 /**Prueba de ajax, sin usar en el proyecto*/
 function ajaxPrueba()
 {
@@ -120,8 +140,11 @@ function esperarClick()
     $("#botonMenu2").click(menuBotonDosClick);
     $("#botonMenu3").click(menuBotonTresClick);
     $("#botonMenu4").click(menuBotonCuatroClick);
-}
-
+    //$("#formManual").submit(cambiarPosicion);
+}/*
+function cambiarPosicion(){
+    posicion= $( "#seleccionDestino option:selected" ).val();
+}*/
 /**Funcion que escribe en el index un codigo HTML al darle al boton de Administrar, donde hay un formulario que envia los datos a el automata*/
 function menuBotonDosClick()
 {   /*admin*/

@@ -273,14 +273,18 @@ aside h2, aside h3
     clear: both;
 }
 
+.parada:first-child{
+    margin-left: 10% !important;
+}
 .paradas
 {
     background-image: url("imgs/botc3b3n_rojo-svg.png");
-    height: 25px;
-    width: 25px;
+    background-repeat: no-repeat;
+    width: 6%;
+    padding-bottom: 6%;
     background-size: 100%;
     float: left;
-    margin-left: 15px !important;
+    margin-left: 3% !important;
 }
 
 /*
@@ -289,34 +293,16 @@ animacion para coche y sus estilos
 descripcion: hace que el coche se mueva dentro de
 */
 
-.car
+#car
 {
     background-image: url("imgs/tranvia.png");
     background-repeat: no-repeat;
-    height: 20px !important;
-    width: 150% !important;
-    padding: 9%;
-    padding-right: 100%;
-    background-size: 50%;
+    height: 200px !important;
+    width: 50% !important;
+    background-size: 100%;
     animation-duration: 3s;
-    animation-name: slidein;
+    -webkit-animation-name: tranvia;
+    animation-name: tranvia;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
-/*
-@keyframes slidein
-{
-    from
-    {
-        margin-left: 45%;
-        width: 25px;
-    }
-    to
-    {
-        margin-left: 1%;
-        width: 25px;
-
-    }
-
-}*/

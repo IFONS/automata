@@ -12,6 +12,101 @@
     <meta charset="utf-8">
     <title>Index</title>
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript">
+        var posicion = :="daw".posA:;
+        $(document).ready(recorrido());
+		function recorrido()
+		{
+			if(posicion==0)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada0").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "0%",
+				}, 1500 );
+			}
+			else if(posicion==1)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada1").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "5%",
+				}, 1500 );
+			}
+			else if(posicion==2)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada2").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "10%",
+				}, 1500 );
+			}
+			else if(posicion==3)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada3").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "15%",
+				}, 1500 );
+			}
+			else if(posicion==4)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada4").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "20%",
+				}, 1500 );
+			}
+			else if(posicion==5)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada5").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "25%",
+				}, 1500 );
+			}
+			else if(posicion==6)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada6").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "30%",
+				}, 1500 );
+			}
+			else if(posicion==7)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada7").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "35%",
+				}, 1500 );
+			}
+			else if(posicion==8)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada8").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "40%",
+				}, 1500 );
+			}
+			else if(posicion==9)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada9").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "45%",
+				}, 1500 );
+			}
+			else if(posicion==10)
+			{
+				$(".paradas").css('background-image', 'url(imgs/botc3b3n_rojo-svg.png)');
+				$("#parada10").css('background-image', 'url(imgs/verde.png)');
+				$( "#car" ).animate({
+					marginLeft: "50%",
+				}, 1500 );
+			}
+		}
+    </script>
 </head>
 <body >
 <!--CABECERA CON SU TITULO e IMAGEN-->
@@ -84,44 +179,31 @@
                     </canvas>
                 </div>-->
             <div class="paradas" id="parada0">
-
             </div>
             <div class="paradas" id="parada1">
-
             </div>
             <div class="paradas" id="parada2">
-
             </div>
             <div class="paradas" id="parada3">
-
             </div>
             <div class="paradas" id="parada4">
-
             </div>
             <div class="paradas" id="parada5">
-
             </div>
             <div class="paradas" id="parada6">
-
             </div>
             <div class="paradas" id="parada7">
-
             </div>
             <div class="paradas" id="parada8">
-
             </div>
             <div class="paradas" id="parada9">
-
             </div>
             <div class="paradas" id="parada10">
-
             </div>
         </div>
-        <!--ESTA ES EL DIV QUE CONTIENE LA ANIMACIÓN GENERADA POR CSS-->
+        <!--ESTA ES EL DIV QUE CONTIENE LA ANIMACIÓN GENERADA POR CSS, el movimiento se realiza por jquery-->
         <div id="recorrido">
-            <div class="car">
-                <!--<div class="car-base"></div>-->
-
+            <div id="car">
             </div>
         </div>
 

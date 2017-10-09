@@ -22,7 +22,7 @@ body
 /**Botones utilizados en la página, variante de letra, color, color de fondo...*/
 .menuitem
 {
-    background-color: #6CAA54;
+    background-color: #1d7bad;
     display: inline-block;
     font-variant: small-caps;
     padding:8px;
@@ -34,7 +34,7 @@ body
 /**Estilo que cambia cuando pasas el raton por encima de los botones*/
 .menuitem:hover
 {
-    background-color: #4f7c3d;
+    background-color: #4eaad8;
     padding:8px;
     cursor: pointer;
 }
@@ -87,7 +87,7 @@ body
 /**CSS CABECERA*/
 #cabecera
 {
-    background:#e5e5e5 url("imgs/tranvia-cabecero.jpg") no-repeat;
+    background:url("imgs/gvCabecera.gif")no-repeat left bottom #1d7bad !important;
     padding:15px;
     text-align:center;
     font-weight: bold;
@@ -127,9 +127,9 @@ body
 /**Span con el copyright*/
 #copyright
 {
-    float: right;
     font-family: Impact;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    float: right;
     margin-right: 10%;
 }
 /**OTROS TAMANIOS: Pantallas mas grandes*/
@@ -166,10 +166,8 @@ body
         margin-bottom: 10%;
         background-size: cover;
     }
-
-    th, td{
+    #tablaInforme th, #tablaInforme td{
         display: block;
-        overflow: auto;
     }
 }
 
@@ -189,6 +187,7 @@ body
 }
 
 /*CSS FORMULARIO CONTACTO*/
+
 #mensError {
     background-color: #eb2910;
     color: #fff;
@@ -256,7 +255,7 @@ aside h2, aside h3
 }
 /**Ocultar input*/
 #origenInputText{
-	visibility:hidden;
+    visibility:hidden;
 }
 /*Posicionamiento para el boton origen*/
 #origen{
@@ -289,8 +288,11 @@ aside h2, aside h3
 /**CSS necesario para Animacion y fondo de la animación*/
 #recorrido
 {
-    height: 100% !important;
+    background-image: url("imgs/trenAnimado2.jpg");
+    background-size: 100% 100%;
+    outline: 1px solid black;
     width: 100% !important;
+    height: 20% !important;
     clear: both;
 }
 
@@ -302,6 +304,7 @@ aside h2, aside h3
     background-image: url("imgs/botc3b3n_rojo-svg.png");
     background-repeat: no-repeat;
     width: 6%;
+    margin-bottom: 1%;
     padding-bottom: 6%;
     background-size: 100%;
     float: left;
@@ -316,19 +319,19 @@ descripcion: hace que el coche se mueva dentro de
 
 #car
 {
+    background-position: bottom;
     background-image: url("imgs/tranvia.png");
     background-repeat: no-repeat;
     height: 200px !important;
     width: 50% !important;
     background-size: 100%;
+    margin-left:0%;
     animation-duration: 3s;
     -webkit-animation-name: tranvia;
     animation-name: tranvia;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
-/*CSS PAGINA IMPRIMIR DATOS (INFORME GENERADO)*/
+/**CSS para la página imprimir datos*/
 body {
     text-align: center;
 }
@@ -338,21 +341,20 @@ body {
     height: auto;
     margin: 5% auto;
     width: 50%;
+    padding: 2%;
 }
-table {
+#tablaInforme {
     border: 2px solid green;
     box-shadow: 1px 1px 9px #888888;
     height: auto;
     line-height: 400%;
     margin: 10% auto;
-    width: 50%;
+    width: 100%;
 }
 
 th, td {
     border: 2px solid green;
     color: #000;
-    font-size: 1.5em;
-    padding: 0 3%;
 }
 #noneFooter {
     font-family: Impact;
@@ -376,3 +378,4 @@ th, td {
     height: auto;
     width: 100px;
 }
+

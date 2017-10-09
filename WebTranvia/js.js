@@ -225,15 +225,47 @@ function activarDesactivarRadios() {
     }
 }
 
-
+/*Funcion en desarrollo que mostraria, al hacer click en el boton de imprimir datos, un pequenio formulario
+para que el trabajador introduzca su nombre y apellidos y puesto o cargo: estos datos aparecerian en el informe
+junto a posicion y velocidad*/
 function menuBotonTresClick()
 {
-    $("#contenido").html('<h2>¿Imprimir datos?</h2><p> </p> '+
-        '<div id="informe">\n' +
-        '    ' +
-        '</div>'
-       );
-    $("#right").html('<h2>Info Pagina TRES</h2><p> </p> ');
+    /*$("#contenido").html('<h3>Indique sus datos y pulse \'Informe\':</h3>\n' +
+     '<form id="datosParaInforme" method="post">\n' +
+     '   <div id="dts">\n' +
+     '       <label for="nt">Nombre y apellidos (*)</label>\n' +
+     '       <input type="text" id="nt" class="datosInforme">\n' +
+     '       <br>\n' +
+     '       <label for="pct">Puesto o cargo (*)</label>\n' +
+     '       <input type="tetx" id="pct" class="datosInforme">\n' +
+     '       <br>\n' +
+     '       (*) Campos obligatorios\n' +
+     '   <!--DIV VACIO PARA MOSTRAR LOS ERRORES AL VALIDAR EL FORMULARIO-->\n' +
+     '   <div id="mensErrorImprimir">\n' +
+     '   </div>\n' +
+     '   </div>\n<div id="botnsInforme">\n' +
+     '       <label for="si"></label>\n' +
+     '       <input type="button" id="si" class="menuitem" value="informe" onclick="generarInforme()" disabled>\n' +
+     '       <label for="ci"></label>\n' +
+     '       <input type="button" id="ci" class="menuitem" value="cancelar" onclick="location.replace(\'index.html\')">\n' +
+     '   </div>\n' +
+     '</form>'
+     );
+     validarDatosInforme();
+     $("#right").html('  <h2>En tiempo real:</h2>'+
+     '                   <div id="destinoTranv">'+
+     '                   <label for="destino">Proximo destino:</label>'+
+     '                   <input type="text" id="destino" class="asideText" value=\':="daw".posA:\'>'+
+     '               </div>'+
+     '               <div id="botones">'+
+     '                           <form id="formOrigen">'+
+     '                               <input type="text" id="origenInputText" name=\'"daw".origen\' class="botones" value="true"'+
+     '                               <p style="clear: both">Ir a la posición origen:</p>'+
+     '                               <input type="submit" id="origen" class="menuitem" value="origen"/>'+
+     '                           </form>'+
+     '                       </div>'+
+     '                       <div id="mensajeBusqueda0">'+
+     '                       </div>');*/
 
 }
 
@@ -246,13 +278,13 @@ function menuBotonCuatroClick()
         '<!--FORMULARIO DE CONTACTO-->\n' +
         '        <h3>Para ponerse en contacto con nosotros rellene el siguiente formulario:</h3>\n' +
         '        <!--SECCION DE RECOGIDA DATOS-->\n' +
-        '        <form id="formCont" method="post"><!-- metodo de envio y el action-->\n' +
+        '        <form id="formCont" action= "mailto:none.com.2017@gmail.com?subject=asunto" enctype ="text/plain" method="post"><!-- metodo de envio y el action-->\n' +
         '            <div id="datosForm">\n' +
-        '                <label for="nombre">nombre (*)</label>\n' +
-        '                <input type="text" id="nombre" class="campoText" placeholder="Nombre" required>\n' +
+        '                <label for="nombre">nombre y apellidos (*)</label>\n' +
+        '                <input type="text" id="nombre" class="campoText" placeholder="Nombre y apellidos">\n' +
         '                <br>\n' +
-        '                <label for="apellidos">apellidos (*)</label>\n' +
-        '                <input type="text" id="apellidos" class="campoText" placeholder="Apellidos" required>\n' +
+        '                <label for="puesto">puesto o cargo (*)</label>\n' +
+        '                <input type="text" id="puesto" class="campoText" placeholder="Puesto o cargo">\n' +
         '                <br>\n' +
         '                <label for="asunto">asunto</label>\n' +
         '                <input type="text" id="asunto" class="campoText" placeholder="Asunto">\n' +
@@ -261,6 +293,9 @@ function menuBotonCuatroClick()
         '                <textarea id="mensaje" placeholder="Escriba aquí su mensaje" class="campoText"></textarea>\n' +
         '            </div>\n' +
         '            <div id="obligatorio">(*) Campos obligatorios</div>\n' +
+        '            <!--DIV VACIO PARA MOSTRAR LOS ERRORES AL VALIDAR EL FORMULARIO-->\n' +
+        '            <div id="mensError">\n' +
+        '            </div>\n' +
         '            <!--BOTONES DEL FORMULARIO-->\n' +
         '            <div id="botones">' +
         '                <label for="enviar"></label>' +
@@ -280,11 +315,249 @@ function menuBotonCuatroClick()
         '<p><a href="https://es-es.facebook.com/" target="_blank" title="none Facebook"><img src="imgs/facebook-none.png" id="noneFacebook"></a><a href="https://twitter.com/?lang=es" target="_blank" title="none Twitter"><img src="imgs/twitter-none.png" id="noneTwitter"></a><a href="https://web.whatsapp.com/" target="_blank" title="none WhatsApp"><img src="imgs/whataspp-none.png" id="noneWhatsapp"></a></p> ');
 }
 
+/**Función para validar los campos del formulario
+ Antes de enviarlos al servidor, se validarán los datos introducidos y después se enviará el correo*/
 function validarFormulario() {
+    var ok1 = false;
+    var ok2 = false;
+    var ok3 = false;
+
+    $("#enviar").prop("disabled", true);
     $("#nombre").blur(
         function () {
+            if ($("#nombre").val() == "") {
+                $("#mensError").css("visibility", "visible");
+                document.getElementById("mensError").innerHTML = "El campo 'Nombre y apellidos' es obligatorio.";
+                $("#nombre").css("background-color", "#eb2910");
+                ok1 = false;
+            }
+            else {
+                if (!$(this).val().match(/^[A-Za-z]+/)) {
+                    $("#mensError").css("visibility", "visible");
+                    document.getElementById("mensError").innerHTML = "El campo 'Nombre y apellidos' no puede contener números.";
+                    $("#nombre").css("background-color", "#eb2910");
+                    ok1 = false;
+                }
+                else {
+                    ok1 = true;
+                    $("#mensError").css("visibility", "hidden");
+                    $("#nombre").prop("disabled", true);
 
+                    $("#puesto").blur(
+                        function () {
+                            if ($("#puesto").val() == "") {
+                                $("#mensError").css("visibility", "visible");
+                                document.getElementById("mensError").innerHTML = "El campo 'Puesto o cargo' es obligatorio.";
+                                $("#puesto").css("background-color", "#eb2910");
+                                ok2 = false;
+                            }
+                            else {
+                                ok2 = true;
+                                $("#mensError").css("visibility", "hidden");
+                                $("#puesto").prop("disabled", true);
+
+                                $("#mensaje").mouseleave(
+                                    function () {
+                                        if ($("#mensaje").val() == "") {
+                                            $("#mensError").css("visibility", "visible");
+                                            document.getElementById("mensError").innerHTML = "El campo 'Mensaje' es obligatorio.";
+                                            $("#mensaje").css("background-color", "#eb2910");
+                                            ok3 = false;
+                                        }
+                                        else {
+                                            ok3 = true;
+                                            $("#mensaje").prop("disabled", true);
+                                            $("#mensError").css("visibility", "hidden");
+                                            $("#enviar").prop("disabled", false);
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+            }
+            $("#nombre").click(
+                function () {
+                    $(this).val("");
+                    $(this).css("background-color", "#fff");
+                }
+            )
+            $("#puesto").click(
+                function () {
+                    $(this).val("");
+                    $(this).css("background-color", "#fff");
+                }
+            )
+            $("#mensaje").click(
+                function () {
+                    $(this).val("");
+                    $(this).css("background-color", "#fff");
+                }
+            )
         }
     )
-
+    $("#enviar").click(
+        function () {
+            if(ok1 && ok2 && ok3) {
+                /*EL MENSAJE EN SI SE ENVIA DESDE LA ETIQUETA FORM EN EL HTML*/
+                $("#contenido").html(
+                    '<div id="divContactoOk">' +
+                    '<p id="mensEnvioOk">Su mensaje se ha enviado correctamente.' +
+                    '<br>' +
+                    'Enseguida recibirá una respuesta.' +
+                    '</p>' +
+                    '<br>' +
+                    '<input type="button" id="botonFormOk" class="menuitem" value="ACEPTAR" onclick="location.replace(\'index.html\')">'+
+                    '</div>'
+                )
+            }
+        }
+    )
 }
+
+/*Funcion para validar los datos introducidos en 'Imprimir Datos' y mostrar en informe en imprimir.html (en desarrollo)*/
+/*function validarDatosInforme() {
+    var ok1 = false;
+    var ok2 = false;
+
+    $("#nt").blur(
+        function () {
+            if ($(this).val() == "") {
+                $("#mensErrorImprimir").css("visibility", "visible");
+                document.getElementById("mensErrorImprimir").innerHTML = "El campo 'Nombre y apellidos' es obligatorio.";
+                $("#nt").css("background-color", "#eb2910");
+                ok1 = false;
+            }
+            else {
+                if (!$(this).val().match(/^[A-Za-z]+/)) {
+                    $("#mensErrorImprimir").css("visibility", "visible");
+                    document.getElementById("mensErrorImprimir").innerHTML = "El campo 'Nombre y apellidos' no puede contener números.";
+                    $("#nt").css("background-color", "#eb2910");
+                    ok1 = false;
+                }
+                else {
+                    ok1 = true;
+                    $("#mensErrorImprimir").css("visibility", "hidden");
+                    $("#nt").prop("disabled", true);
+
+                    $("#pct").mouseleave(
+                        function () {
+                            if ($(this).val() == "") {
+                                $("#mensErrorImprimir").css("visibility", "visible");
+                                document.getElementById("mensErrorImprimir").innerHTML = "El campo 'Puesto o cargo' es obligatorio.";
+                                $("#pct").css("background-color", "#eb2910");
+                                ok2 = false;
+                            }
+                            else {
+                                ok2 = true;
+                                $("#pct").prop("disabled", true);
+                                $("#mensErrorImprimir").css("visibility", "hidden");
+                                $("#si").prop("disabled", false);
+                            }
+                        }
+                    )
+                }
+            }
+            $("#nt").click(
+                function () {
+                    $(this).val("");
+                    $(this).css("background-color", "#fff");
+                }
+            )
+            $("#pct").click(
+                function () {
+                    $(this).val("");
+                    $(this).css("background-color", "#fff");
+                }
+            )
+
+
+        }
+
+    )
+
+    $("#si").click(
+     function () {
+     if(ok1 && ok2) {
+     SI OK, SE MANDA A IMPRIMIR.HTML
+
+     var nombreApellidos = $("#nt").val();
+     var puestoCargo = $("#pct").val();
+
+
+     location.replace("imprimir.html?var1=nombreApellidos&var2=puestoCargo");
+
+     location.replace("imprimir.html?var1=");
+
+     document.getElementById("na").innerHTML = "nombreApellidos";
+     document.getElementById("pc").innerHTML = "puestoCargo";
+
+     generarInforme(nombreApellidos, puestoCargo);
+     }
+     }
+     )
+}*/
+
+/*SE GENERA EL INFORME A IMPRIMIR CON LOS DATOS INTRODUCIDOS POR EL TRABAJADOR*/
+/*function generarInforme(var1, var2) {
+ location.replace("imprimir.html");
+
+
+ var nombreApellidos = $("#nt").val();
+ var puestoCargo = $("#pct").val();
+ alert($("#nt").val());
+ alert(var1);
+ alert(puestoCargo);
+
+ location.replace("imprimir.html?var1=nombreApellidos&var2=puestoCargo");
+ }*/
+
+/*Funcion que genera el imforme a imprimir con los datos introducidos por el trabajador (en desarrollo)*/
+/*function generarInforme() {
+    var nombreApellidos = $("#nt").val();
+    var puestoCargo = $("#pct").val();
+    alert("hola - " + $("#nt").val());
+
+    location.replace("imprimir.html");
+    window.onload = llenarInforme(nombreApellidos, puestoCargo);
+
+}*/
+
+/*Funcion llamada desde imprimir.html que generaria la tabla de datos desde aqui (javascript) (en desarrollo)*/
+/*function llenarInforme(nombreAps, puestoCar) {
+
+    $("#container").html(
+        '<h3>La última instrucción introducida ha sido:</h3>\n' +
+        '<table id="tablaInforme">\n' +
+        '   <tr>\n' +
+        '       <th>Posición:</th>\n' +
+        '       <td>:="daw".posA:</td>\n' +
+        '   </tr>\n' +
+        '   <tr>\n' +
+        '       <th>Velocidad:</th>\n' +
+        '       <td>Constante</td>\n' +
+        '   </tr>\n' +
+        '   <tr>\n' +
+        '       <th>Trabajador:</th>\n' +
+        '       <td id="na"></td>\n' +
+        '   </tr>\n' +
+        '   <tr>\n' +
+        '       <th>Puesto o cargo:</th>\n' +
+        '       <td id="pc"></td>\n' +
+        '   </tr>\n' +
+        '</table>'
+    );
+
+    document.getElementById("na").innerHTML = nombreAps;
+    document.getElementById("pc").innerHTML = puestoCar;
+}*/
+
+/*Lo mismo que la anterior, otro intento de otra manera (en desarrollo)*/
+/*function llenarInforme () {
+
+ document.getElementById("na").innerHTML = nombreAps;
+ document.getElementById("pc").innerHTML = puestoCar;
+ }*/
+
+

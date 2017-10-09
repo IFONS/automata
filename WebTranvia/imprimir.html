@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js.js"></script>
+    <script src="Chart.js"></script>
     <meta charset="UTF-8">
     <title>Informe</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+
 </head>
-<body>
-    <div>
-        <p>Posicion: :="daw".posA:</p>
-        <p>Velocidad: Constante</p>
-    </div>
+<body> <!--onload="llenarInforme()"-->
+<h1>WebTranvía</h1>
+<div id="container">
+    <h3>La última instrucción introducida ha sido:</h3>
+    <table id="tablaInforme">
+        <tr>
+            <th>Posición:</th>
+            <td>:="daw".posA:</td>
+        </tr>
+        <tr>
+            <th>Velocidad:</th>
+            <td>Constante</td>
+        </tr>
+        <!--La siguente parte de la tabla esta comentada por estar dicha parte en desarrollo-->
+        <!--<tr>
+            <th>Trabajador:</th>
+            <td><span id="na"></span></td>
+        </tr>
+        <tr>
+            <th>Puesto o cargo:</th>
+            <td id="pc"></td>
+        </tr>-->
+    </table>
+</div>
+<footer>
+    <p>Aplicación desarrollada por <span id="noneFooter">none.com</span></p>
+</footer>
 </body>
 </html>

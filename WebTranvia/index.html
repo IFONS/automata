@@ -6,30 +6,29 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="jquery.keyframes.min.js"></script>
-    <script src="js.js"></script>
-    <script src="Chart.js"></script>
+    <script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="./js/jquery.keyframes.min.js"></script>
+    <script src="./js/js.js"></script>
+    <script src="./js/Chart.js"></script>
     <meta charset="utf-8">
     <title>Index</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./style/main.css">
 
 </head>
 <body >
 <!--CABECERA CON SU TITULO e IMAGEN-->
 <header id="cabecera" onclick="location.replace('index.html')">
-    <a href="index.html" title="tranvia"><img id="#trenvia" src="imgs/Logo.png" alt="tranvia" style="height: 100px;width: 100px; float: left"></a>
+    <a href="index.html" title="tranvia"><img id="#trenvia" src="./imgs/Logo.png" alt="tranvia" style="height: 100px;width: 100px; float: left"></a>
     <h1>WebTranvía</h1>
     <h2>Aplicación de gestión del tranvía de Vitoria-Gasteiz</h2>
 </header>
 <div id="contenedor">
     <!--CREAMOS EL MENU SUPERIOR DE NAVEGACIÓN-->
     <div class="menu">
-        <!--BOTONES DE NAVEGACIÓN-->
-        <div class="menuitem" id="botonMenu1" onclick="location.replace('index.html')">Información</div>
-        <div class="menuitem" id="botonMenu2" onclick="menuBotonDosClick">Administrar</div>
-        <div class="menuitem" id="botonMenu3" onclick="window.open('imprimir.html', '_blank')">Imprimir Datos</div>
-        <div class="menuitem" id="botonMenu4" >Servicio Técnico</div>
+        <input type="button" class="menuitem" id="botonMenu1" value="Información" onclick="location.replace('index.html')"/>
+        <input type="button" class="menuitem" id="botonMenu2" value="Administrar" onclick="menuBotonDosClick"/>
+        <input type="button" class="menuitem" id="botonMenu3" value="Imprimir Datos" onclick="window.open('./Views/imprimir.html', '_blank')"/>
+        <input type="button" class="menuitem" id="botonMenu4" value="Servicio Técnico"/>
     </div>
     <!--SECCIÓN CONTENEDORA DE TODOS LAS PANTALLAS QUE SE VAYAN MOSTRANDO (SALVO IMPRIMIR DATOS)
     EN ESTA PANTALLA PRINCIPAL SE MUESTRA LA ANIMACIÓN DEL MOVIMIENTO DEL TRANVÍA CON SUSU PARADAS
@@ -45,8 +44,8 @@
             </form>
             <form  id="formManual" method="post">
                 <h2>Manual:</h2>
-                <label for="seleccionDestino" style="float:left">Destino:</label>
-                <select id="seleccionDestino" class="selectAdmin" name='"daw".posA' style="float:left">
+                <label id="selecDestinoLab" for="seleccionDestino" >Destino:</label>
+                <select id="seleccionDestino" class="selectAdmin" name='"daw".posA' >
                     <option class="opcionesDestino" id="opcionDestino0" value="0">Parada origen</option>
                     <option class="opcionesDestino" id="opcionDestino1" value="1">Parada 1</option>
                     <option class="opcionesDestino" id="opcionDestino2" value="2">Parada 2</option>
@@ -72,7 +71,7 @@
             <form id="formAutomatico" method="post">
                 <input name='"daw".emerg' class="movP" type="text" value="true"/>
                 <label for="paro"></label>
-                <input type="submit"id="paro" class="menuitem" value="Paro de emergencia" >
+                <input type="submit" id="paro" class="menuitem" value="Paro de emergencia" >
             </form>
         </div>
         <div id="divFormulario">
@@ -80,7 +79,7 @@
         </div>
         <!--ESTA ES EL DIV QUE CONTIENE LAS PARADAS -->
         <div id="contenedorParadas">
-            <h2>Paradas</h2>
+            <h2>Tranvia</h2>
             <p>
                 <!--ESTA ERA UNA GRÁFICA QUE TENÍAMOS PROGRAMADA PERO NOS HAN FALTADO DATOS PARA MOSTRAR (PENSÁBAMOS EN PROGRESO Y VELOCIDAD PERO LA VARIABLE VELOCIDAD SOLO TIENE UN VALOR FIJO Y NO VEMOS EL SENTIDO DE MOSTRARLO)-->
                 <!--
@@ -118,19 +117,6 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript">
-        try{
-            var posicion = ':="daw".posA:';
-            if(posicion==null||posicion>10||posicion<0||isNaN(posicion))
-            {
-                throw "Error al conectarse al servidor";
-            }
-            $(document).ready(recorrido(posicion));
-        }
-        catch(err){
-            alert(err);
-        }
-    </script>
     <!--AQUÍ SE DEFINE LA BARRA LATERAL DERECHA PARA ESTA PANTALLA. LAS DEMÁS PANTALLAS, SALVO 'IMPRIMIR DATOS', GENERAN ESTA BARRA DESDE JS-->
     <aside id="right">
         <h2>En tiempo real:</h2>
@@ -151,11 +137,31 @@
         </div>
     </aside>
 </div>
-
+<script type="text/javascript">
+    try{
+        var posicion = ':="daw".posA:';
+        if(posicion>10||posicion<0)
+        {
+            throw "Error, datos en el servidor incorrectos";
+        }
+		if(posicion==null||isNaN(posicion))
+        {
+			$("#destino").toggle(false)
+            $("#botonMenu2").attr('disabled','disabled');
+			$("#botonMenu3").attr('disabled','disabled');
+			$("#origen").prop("disabled", true);
+            throw "Error al conectarse al servidor";
+		}
+        $(document).ready(recorrido(posicion));
+    }
+    catch(err){
+        alert(err);
+    }
+</script>
 <!--ESTE ES EL PIE DE PÁGINA. ES FIJO, EL MISMO PARA TODAS LAS PANTALLAS DE LA APLICACIÓN-->
 <footer id="pie">
     <span id="licencia"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" title="Esta obra está bajo una licencia de Creative Commons Reconocimiento 4.0 Internacional."><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></span>
-    <span id="copyright">&copy;none.com</span>
+    <span id="copyright">&copy; copyright:none;</span>
 </footer>
 </body>
 </html>

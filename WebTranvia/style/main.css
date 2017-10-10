@@ -1,0 +1,388 @@
+*
+{
+    box-sizing: border-box;
+}
+
+/**Color y tipo de letra aplicado a todoo el body*/
+body
+{
+    font-family:Verdana;
+    color:#aaaaaa;
+    margin: 0;
+}
+
+/**Tamaño para el menu y letras centradas*/
+.menu
+{
+    width:70%;
+    margin: 0 auto;
+    text-align:center;
+}
+
+/**Botones utilizados en la página, variante de letra, color, color de fondo...*/
+.menuitem
+{
+    background-color: #1d7bad;
+    display: inline-block;
+    font-variant: small-caps;
+    padding:8px;
+    margin: 20px 1% 0 1%;
+    color: white;
+    outline:1px outset #e5e5e5;
+}
+
+/**Estilo que cambia cuando pasas el raton por encima de los botones*/
+.menuitem:hover
+{
+    background-color: #4eaad8;
+    padding:8px;
+    cursor: pointer;
+}
+
+/**Estilo que cambia cuando el boton esta desactivado, usado en la pestaña Administrar*/
+.menuitem:disabled{
+    background-color:#aaaaaa;
+    cursor: default;
+}
+
+/**Estilo para el section principal contenido, tamaño, margenes, color fondo...*/
+#contenido
+{
+    clear: both;
+    float:left;
+    width:38%;
+    margin-left: 20%;
+    margin-top: 40px;
+    background-color:#e5e5e5;
+    margin-bottom: 1%;
+    padding: 0 20px 1%;
+    height: auto;
+
+
+}
+
+/**Tamaño de grafico*/
+#chart-area
+{
+    height: 50% !important;
+    width: 100% !important;
+}
+
+/** Estilo para el aside, donde se muetran algunos datos, se posiciona a la derecha del #contenido en caso de pantallas normales*/
+#right
+{
+    background-color:#e5e5e5;
+    float:right;
+    width:20%;
+    padding:15px;
+    margin-top:40px;
+    text-align:center;
+    margin-right: 20%;
+    height: auto;
+    font-size: 80%;
+
+}
+
+
+/**CSS CABECERA*/
+#cabecera
+{
+    background:url("../imgs/gvCabecera.gif")no-repeat left bottom #1d7bad !important;
+    padding:15px;
+    text-align:center;
+    font-weight: bold;
+    color: #fff;
+    width: 60%;
+    height: 200px;
+    margin: 0 auto;
+    background-size: cover;
+}
+
+
+#contenedor
+{
+    overflow:auto;
+}
+
+
+/*CSS PIE (FOOTER)*/
+#pie
+{
+    background-color:#e5e5e5;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin: 0 auto;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+/**span de licencia donde se encuentra la imagen*/
+#licencia
+{
+    float: left;
+    margin-left: 10%;
+}
+
+/**Span con el copyright*/
+#copyright
+{
+    font-family: Impact;
+    font-size: 1.2em;
+    float: right;
+    margin-right: 10%;
+}
+/**OTROS TAMANIOS: Pantallas mas grandes*/
+@media only screen and (max-width:1500px)
+{
+    #cabecera
+    {
+        width: 80%;
+    }
+    #contenido
+    {
+        margin-left: 10%;
+        width: 58%;
+        height: auto;
+        margin-bottom: 10%;
+        background-size: cover;
+    }
+    #right
+    {
+        margin-right: 10%;
+    }
+
+}
+
+/**OTROS TAMANIOS: Para Moviles*/
+@media only screen and (max-width:620px)
+{
+    #cabecera, #menu, #contenido, #right
+    {
+        width:100%;
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+        margin-bottom: 10%;
+        background-size: cover;
+    }
+    #tablaInforme th, #tablaInforme td{
+        display: block;
+    }
+}
+
+/**Estilo para el div #adm dentro de #contenido que cambiara cuando haga click en administrar*/
+#adm
+{
+    height: 100%;
+    padding-bottom: 20%;
+    color:black;
+    display: none;
+}
+
+/**Tamaño de letra para el select de administrar*/
+.selectAdmin
+{
+    font-size: larger;
+}
+
+/*CSS FORMULARIO CONTACTO*/
+
+#mensError {
+    background-color: #eb2910;
+    color: #fff;
+    float: right;
+    height: auto;
+    margin-top: -17%;
+    text-align: center;
+    width: 17%;
+}
+#datosForm
+{
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.campoText
+{
+    margin: 1.5% 1% 0 1%;
+    height: 30px;
+    width: 35%;
+}
+
+#mensaje
+{
+    vertical-align: -70%;
+}
+
+#obligatorio
+{
+    margin: 1% 0 -2% 0;
+    text-align: center;
+}
+#mensEnvioOk
+{
+    color: #000;
+    font-size: 1.2em;
+}
+
+/*CSS BARRA LATERAL (ASIDE)*/
+#right div
+{
+    color: #000;
+    font-weight: bold;
+    margin: 5% 0;
+}
+
+.asideText
+{
+    height: 35px;
+    width: 80%;
+}
+
+aside h2, aside h3
+{
+    color: #000;
+}
+
+#noneFacebook, #noneTwitter, #noneWhatsapp
+{
+    height: 50px;
+    margin: 0 2%;
+    width: 50px;
+}
+
+#selecDestinoLab, #seleccionDestino
+{
+	float: left;
+}
+
+/**Ocultar input*/
+#origenInputText{
+    visibility:hidden;
+}
+/*Posicionamiento para el boton origen*/
+#origen{
+    clear: both;
+    margin-top: 3px !important;
+}
+/*Posicionamiento para el boton marcha*/
+#marcha{
+    margin-bottom: 50px !important;
+    float:left;
+    marginTop:20px;
+}
+/*Posicionamiento para el boton marcha paro*/
+#paro{
+    clear:both;
+    float:left;
+}
+/**Ocultar input*/
+.movP{
+    visibility:hidden;
+}
+/*Posicionamiento para el boton marcha auto*/
+#marchaAuto{
+    clear:both;
+    float:left;
+    marginTop:30px;
+}
+
+
+/**CSS necesario para Animacion y fondo de la animación*/
+#recorrido
+{
+    background-image: url("../imgs/trenAnimado2.jpg");
+    background-size: 100% 100%;
+    outline: 1px solid black;
+    width: 100% !important;
+    height: 20% !important;
+    clear: both;
+}
+
+.parada:first-child{
+    margin-left: 10% !important;
+}
+.paradas
+{
+    background-image: url("../imgs/botc3b3n_rojo-svg.png");
+    background-repeat: no-repeat;
+    width: 6%;
+    margin-bottom: 1%;
+    padding-bottom: 6%;
+    background-size: 100%;
+    float: left;
+    margin-left: 3% !important;
+}
+
+/*
+animacion para coche y sus estilos
+
+descripcion: hace que el coche se mueva dentro de
+*/
+
+#car
+{
+    background-position: bottom;
+    background-image: url("../imgs/tranvia.png");
+    background-repeat: no-repeat;
+    height: 200px !important;
+    width: 50% !important;
+    background-size: 100%;
+    margin-left:0%;
+    animation-duration: 3s;
+    -webkit-animation-name: tranvia;
+    animation-name: tranvia;
+}
+
+/**CSS para la página imprimir datos*/
+body {
+    text-align: center;
+}
+#container {
+    border: 2px solid red;
+    box-shadow: 1px 1px 9px #888888;
+    height: auto;
+    margin: 5% auto;
+    width: 50%;
+    padding: 2%;
+}
+#tablaInforme {
+    border: 2px solid green;
+    box-shadow: 1px 1px 9px #888888;
+    height: auto;
+    line-height: 400%;
+    margin: 10% auto;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid green;
+    color: #000;
+}
+#noneFooter {
+    font-family: Impact;
+    font-size: 1.5em;
+}
+#mensErrorImprimir {
+    background-color: #eb2910;
+    color: #fff;
+    float: right;
+    height: auto;
+    margin-top: -9%;
+    text-align: center;
+    width: 17%;
+}
+#datosTrabajador {
+    border: 2px solid yellow;
+    height: auto;
+    width: 50%;
+}
+#na {
+    height: auto;
+    width: 100px;
+}
+
